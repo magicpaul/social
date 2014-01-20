@@ -1,0 +1,18 @@
+
+<% @statuses.each do |status| %>
+<div class="row status">
+  <div class="large-2 columns small-3"><%= image_tag status.user.gravatar_url %></div>
+  <div class="large-10 columns">
+    <p><strong><%= status.user.full_name %> said:</strong> <%= status.content %></p>
+    <ul class="inline-list meta">
+      <li><%= link_to time_ago_in_words(status.created_at) + " ago", status %></li>
+      <li class="admin"><%= link_to '', edit_status_path(status) , :class=> "fi-wrench so-edit" %></li>
+      <li class="admin"><%= link_to "", status,method: :delete, data: { confirm: 'Are you sure?' }, :class => "fi-x so-delete" %></li>
+    </ul>
+  </div>
+</div>
+<hr />
+<% end %>
+<br />
+
+<%= link_to 'New Status', new_status_path %>

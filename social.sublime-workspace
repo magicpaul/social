@@ -1,0 +1,948 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dow",
+				"downcased_email"
+			],
+			[
+				"do",
+				"do"
+			],
+			[
+				"ass",
+				"assigns"
+			],
+			[
+				"L",
+				"last_name"
+			],
+			[
+				"fir",
+				"first_name"
+			],
+			[
+				"pro",
+				"profile_name"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"asser",
+				"assert_redirected_to"
+			],
+			[
+				"assert",
+				"assert_response"
+			],
+			[
+				"asse",
+				"assert_response"
+			],
+			[
+				"assert_re",
+				"assert_redirected_to"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"st",
+				"string"
+			],
+			[
+				"b",
+				"inline-block"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"qui",
+				"quizbox"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"scor",
+				"scoreString"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"ans",
+				"answerCount"
+			],
+			[
+				"an",
+				"answer_encoded"
+			],
+			[
+				"J",
+				"json"
+			],
+			[
+				"corre",
+				"correctAns"
+			],
+			[
+				"re",
+				"returnData"
+			],
+			[
+				"i",
+				"if?	$… = ( … ) ? … : …"
+			],
+			[
+				"optc",
+				"optc"
+			],
+			[
+				"optb",
+				"optb"
+			],
+			[
+				"my",
+				"mysql_close"
+			],
+			[
+				"answe",
+				"answerCount"
+			],
+			[
+				"rg",
+				"rgba	rgba()"
+			],
+			[
+				"fl",
+				"fl	float: ${1:left};"
+			],
+			[
+				"li",
+				"lis:n	list-style:none"
+			],
+			[
+				"bo",
+				"border-bottom"
+			],
+			[
+				"co",
+				"col	color"
+			],
+			[
+				"rb",
+				"rgba	rgba()"
+			],
+			[
+				"parent",
+				"parentstring"
+			],
+			[
+				"data",
+				"dataString"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"import",
+				"important"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"da",
+				"dataString"
+			],
+			[
+				"story",
+				"storyID"
+			],
+			[
+				"ro",
+				"rowid"
+			],
+			[
+				"sto",
+				"StoryID"
+			],
+			[
+				"subm",
+				"submitComment"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"S",
+				"sans-serif  (value)"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"num",
+				"numComments"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"di",
+				"displayComments"
+			],
+			[
+				"comm",
+				"comment"
+			],
+			[
+				"bg",
+				"bgimg"
+			],
+			[
+				"dir",
+				"directory"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"mysql_fe",
+				"mysql_fetch_assoc"
+			],
+			[
+				"Sto",
+				"StoryID"
+			],
+			[
+				"sh",
+				"shuffle"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"mys",
+				"mysql_query"
+			],
+			[
+				"incl",
+				"incl1	include_once …"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"po",
+				"pos:r	position:relative"
+			],
+			[
+				"sea",
+				"searchbtn"
+			],
+			[
+				"sear",
+				"searchbox"
+			],
+			[
+				"tr",
+				"tra	transparent"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"mar",
+				"mar	margin"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"main",
+				"mainnav"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"dis",
+				"dis	display"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"pos",
+				"pos:s	position:static"
+			],
+			[
+				"spl",
+				"splash_text"
+			],
+			[
+				"backg",
+				"background-size"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"fsi",
+				"font-size"
+			],
+			[
+				"ta",
+				"ta	text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"ar",
+				"article	Tag"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"fade",
+				"fadeIn"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"ga",
+				"galleryWrapper"
+			],
+			[
+				"f",
+				"font-family"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"mai",
+				"margin-top"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"the",
+				"the_content"
+			],
+			[
+				"th",
+				"thumbnail"
+			],
+			[
+				"Featured",
+				"Featured"
+			],
+			[
+				"cam",
+				"cameraComplete"
+			],
+			[
+				"camera",
+				"cameraComplete"
+			],
+			[
+				"ch",
+				"changePage"
+			],
+			[
+				"rem",
+				"removeClass"
+			],
+			[
+				"hi",
+				"hide"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"small",
+				"smallImage"
+			],
+			[
+				"sma",
+				"smallImage"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"ui",
+				"ui-disabled"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"sen",
+				"sendEmail"
+			],
+			[
+				"image",
+				"imageURI"
+			],
+			[
+				"email",
+				"emailTest"
+			],
+			[
+				"its",
+				"itspaulgrant"
+			],
+			[
+				"clea",
+				"clear"
+			],
+			[
+				"loc",
+				"localStorage"
+			],
+			[
+				"EX",
+				"EXTRA_TEXT"
+			],
+			[
+				"Ema",
+				"emailComposer"
+			],
+			[
+				"button",
+				"button"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/statuses/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 717,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/profiles/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 772,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Disable Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 160.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Sites/social/app/helpers/application_helper.rb",
+		"/C/Sites/social/app/models/user.rb",
+		"/C/Sites/social/test/integration/custom_routes_test.rb",
+		"/C/Sites/social/test/fixtures/statuses.yml",
+		"/C/Sites/social/Gemfile",
+		"/C/Sites/social/config/routes.rb",
+		"/C/Sites/social/app/views/profiles/show.html.erb",
+		"/C/Sites/social/app/controllers/profiles_controller.rb",
+		"/C/Sites/social/test/functional/profiles_controller_test.rb",
+		"/C/Sites/social/test/fixtures/users.yml",
+		"/C/Sites/social/app/views/devise/registrations/edit.html.erb",
+		"/C/Sites/social/config/environments/development.rb",
+		"/C/Sites/social/app/views/layouts/application.html.erb",
+		"/C/Sites/social/app/views/devise/registrations/new.html.erb",
+		"/C/Sites/social/test/unit/user_test.rb",
+		"/C/Sites/social/db/migrate/20140120141929_add_profile_name_to_user.rb",
+		"/C/Sites/social/db/migrate/20140115213621_devise_create_users.rb",
+		"/C/Sites/social/app/views/devise/shared/_links.erb",
+		"/C/Sites/social/test/unit/status_test.rb",
+		"/C/Sites/social/app/models/status.rb",
+		"/X/Documents/GitHub/magicpaul.github.io/index.html",
+		"/C/Sites/social/test/functional/statuses_controller_test.rb",
+		"/C/Sites/social/app/controllers/statuses_controller.rb",
+		"/C/Sites/social/test/test_helper.rb",
+		"/C/Sites/social/app/assets/stylesheets/application.css",
+		"/C/Sites/social/db/migrate/20140115223041_add_user_id_to_status.rb",
+		"/C/Sites/social/app/views/statuses/show.html.erb",
+		"/C/Sites/social/app/views/statuses/_form.html.erb",
+		"/C/Sites/social/app/views/statuses/new.html.erb",
+		"/C/Sites/social/config/application.rb",
+		"/C/Sites/social/app/views/statuses/edit.html.erb",
+		"/C/Sites/social/app/views/devise/sessions/new.html.erb",
+		"/C/Sites/social/app/views/statuses/index.html.erb",
+		"/C/Sites/social/app/assets/stylesheets/statuses.css.scss",
+		"/C/Sites/social/app/assets/stylesheets/foundation_and_overrides.scss",
+		"/C/Sites/social/public/index.html",
+		"/C/Sites/social/app/assets/stylesheets/scaffolds.css.scss",
+		"/C/Sites/treebook/app/views/statuses/index.html.erb",
+		"/X/Downloads/foundation-icons/foundation-icons.css",
+		"/C/Sites/social/db/migrate/20140112163125_create_statuses.rb",
+		"/X/Program Files (x86)/Steam/steamapps/common/Crysis 2 Game of the Year/system.cfg",
+		"/C/Sites/treebook/config/initializers/simple_form.rb",
+		"/C/Sites/treebook/config/initializers/simple_form_bootstrap.rb",
+		"/C/Sites/treebook/public/index.html",
+		"/X/Paul/Temp/fz3temp-1/minidlna.conf",
+		"/X/Program Files/Serviio/bin/ServiioConsole.exe.vmoptions",
+		"/X/Paul/Temp/fz3temp-1/serviio.sh",
+		"/X/Documents/serviiod.sh",
+		"/C/Sites/treebook/app/assets/stylesheets/scaffolds.css.scss",
+		"/C/Sites/treebook/app/assets/stylesheets/application.css",
+		"/C/Sites/treebook/app/views/layouts/application.html.erb",
+		"/C/Sites/treebook/tmp/pids/server.pid",
+		"/C/Sites/treebook/app/models/status.rb",
+		"/C/Sites/treebook/db/migrate/20131216205351_create_statuses.rb",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/C/xampp/htdocs/MainAssignment/full.php",
+		"/C/xampp/htdocs/MainAssignment/checkAnswer.php",
+		"/X/Downloads/Mobile Bundle 2013 - ThemeForest/Upload/mobilefirst/404.php",
+		"/C/xampp/htdocs/MainAssignment/create.php",
+		"/C/xampp/htdocs/MainAssignment/index.php",
+		"/C/xampp/htdocs/MainAssignment/explore.php",
+		"/C/xampp/htdocs/MainAssignment/quiz.php",
+		"/C/xampp/htdocs/MainAssignment/stylesheets/base.css",
+		"/X/Paul/Temp/7zOB30A.tmp/style.css",
+		"/X/Paul/Temp/7zOE746.tmp/style.css",
+		"/X/Downloads/Mobile Bundle 2013 - ThemeForest/Upload/mobilefirst/no-results.php",
+		"/X/Downloads/Mobile Bundle 2013 - ThemeForest/Upload/mobilefirst/css/layout.css",
+		"/X/Downloads/CyberLink PowerDirector 11 Ultra 11.0.0.2321 Multilingual [ChingLiu]/ChingLiu.Notes.nfo",
+		"/X/Downloads/Mobile Bundle 2013 - ThemeForest/Upload/mobilefirst/css/font-awesome.css",
+		"/X/Documents/evening.csv",
+		"/C/xampp/htdocs/MainAssignment/addStory.php",
+		"/C/xampp/htdocs/MainAssignment/inc/connect.php",
+		"/C/xampp/htdocs/MainAssignment/stylesheets/foundation.min.css",
+		"/C/xampp/htdocs/mymaths/upload.php",
+		"/C/xampp/htdocs/MainAssignment/javascripts/login.js",
+		"/C/xampp/htdocs/login/javascripts/script.js",
+		"/C/xampp/htdocs/MainAssignment/addComment.php",
+		"/C/xampp/htdocs/mymaths/problem.php",
+		"/C/xampp/htdocs/MainAssignment/register.php",
+		"/C/xampp/htdocs/MainAssignment/login.html",
+		"/C/xampp/htdocs/MainAssignment/login.php",
+		"/C/xampp/htdocs/MainAssignment/inc/sessions.php",
+		"/C/xampp/htdocs/MainAssignment/logout.php",
+		"/C/xampp/htdocs/MainAssignment/deleteComment.php",
+		"/C/xampp/htdocs/MainAssignment/stylesheets/foundation.css",
+		"/C/xampp/htdocs/login/reloadGallery.php",
+		"/C/xampp/htdocs/login/index.php",
+		"/C/xampp/htdocs/MainAssignment/register.html",
+		"/C/xampp/htdocs/ajaxComment/config.php",
+		"/C/xampp/htdocs/MainAssignment/explore.html",
+		"/C/xampp/htdocs/mymaths/insert-new.php",
+		"/C/xampp/htdocs/mymaths/check.php",
+		"/C/xampp/htdocs/MainAssignment/index.html",
+		"/X/Paul/Temp/7zO4408.tmp/addscore.php",
+		"/C/xampp/htdocs/MainAssignment/time.php",
+		"/X/Paul/Temp/7zO331.tmp/addscore.php",
+		"/C/xampp/htdocs/ajaxComment/index.php",
+		"/X/Downloads/ajaxComment/index.php",
+		"/C/xampp/htdocs/ajaxComment/getItemsFromDatabase.php",
+		"/C/xampp/htdocs/MainAssignment/test.php",
+		"/K/pizza_week09/index.php",
+		"/C/xampp/htdocs/mymaths/summary.php",
+		"/X/Web/dock ellis/OTL  The Long, Strange Trip of Dock Ellis - MLB - ESPN.htm",
+		"/X/Web/dock ellis/OTL  The Long, Strange Trip of Dock Ellis - MLB - ESPN_files/motion.js",
+		"/K/week08/test/index.php",
+		"/C/xampp/htdocs/ww1_paralax/inc/connect.php",
+		"/C/xampp/htdocs/login/inc/dbConnect.inc.php",
+		"/X/Downloads/Names for invites2.txt",
+		"/X/Web/ww1_paralax/index.html",
+		"/X/Web/aurionlearning_test/html/css/main.css",
+		"/X/Web/ww1_paralax/stylesheets/curtain.css",
+		"/X/Web/ww1_paralax/stylesheets/foundation.css",
+		"/X/Web/ww1_paralax/stylesheets/base.css",
+		"/X/Web/ww1_paralax/explore.html",
+		"/X/Web/ww1_paralax/create.html",
+		"/X/Web/aurionlearning_test/html/index.html",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/includes/meta-boxes.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/style.css",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/image.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/single-portfolio.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/page.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.html",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/header.php",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/banded.html",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpbootstrap/header.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"register",
+			"10",
+			"control",
+			"lg",
+			"controls",
+			"control-group",
+			" and ",
+			"\n\n\n\n",
+			"\n\n\n",
+			"\n\n",
+			"\n\n\n\n",
+			"\n\n\n",
+			"Somme",
+			"mg",
+			"\"mg\"",
+			"mg",
+			"blockquote",
+			"fadeIn",
+			"show()",
+			"a",
+			"important",
+			"255",
+			"p",
+			"close",
+			"#comment",
+			"li.name",
+			".2",
+			".3",
+			"25",
+			"4",
+			".1",
+			"article",
+			"hover",
+			"@media",
+			"line-",
+			"-right ",
+			"-right",
+			"h3",
+			"fullscreen",
+			"curtain",
+			"0",
+			"large",
+			"columns\"><",
+			"init",
+			"fall",
+			"content",
+			"alert",
+			"media",
+			"password",
+			"email",
+			"error",
+			"'pic'",
+			"'file'",
+			"[",
+			"\"pictures\"",
+			"rowbg",
+			"$rowbg",
+			"$background",
+			"background",
+			"feature",
+			"featured project",
+			"Featured Project",
+			"feature",
+			"Feature",
+			"feature",
+			"#LoadModule rewrite_module modules/mod_rewrite.so",
+			"modernizer",
+			"icons",
+			"icon",
+			"47",
+			"false"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/statuses/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 717,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/profiles/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"si",
+				"config/initializers/simple_form.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true
+}
