@@ -520,18 +520,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/statuses/index.html.erb",
+			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 717,
+				"buffer_size": 884,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/profiles/show.html.erb",
+			"file": "config/database.yml",
 			"settings":
 			{
-				"buffer_size": 772,
+				"buffer_size": 666,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile.lock",
+			"settings":
+			{
+				"buffer_size": 3101,
 				"line_ending": "Unix"
 			}
 		}
@@ -592,13 +600,16 @@
 	},
 	"file_history":
 	[
+		"/X/Program Files/PostgreSQL/9.3/data/pg_hba.conf",
+		"/C/Sites/social/config/database.yml",
+		"/C/Sites/social/app/views/statuses/index.html.erb",
+		"/C/Sites/social/app/views/profiles/show.html.erb",
 		"/C/Sites/social/app/helpers/application_helper.rb",
 		"/C/Sites/social/app/models/user.rb",
 		"/C/Sites/social/test/integration/custom_routes_test.rb",
 		"/C/Sites/social/test/fixtures/statuses.yml",
 		"/C/Sites/social/Gemfile",
 		"/C/Sites/social/config/routes.rb",
-		"/C/Sites/social/app/views/profiles/show.html.erb",
 		"/C/Sites/social/app/controllers/profiles_controller.rb",
 		"/C/Sites/social/test/functional/profiles_controller_test.rb",
 		"/C/Sites/social/test/fixtures/users.yml",
@@ -624,7 +635,6 @@
 		"/C/Sites/social/config/application.rb",
 		"/C/Sites/social/app/views/statuses/edit.html.erb",
 		"/C/Sites/social/app/views/devise/sessions/new.html.erb",
-		"/C/Sites/social/app/views/statuses/index.html.erb",
 		"/C/Sites/social/app/assets/stylesheets/statuses.css.scss",
 		"/C/Sites/social/app/assets/stylesheets/foundation_and_overrides.scss",
 		"/C/Sites/social/public/index.html",
@@ -717,9 +727,7 @@
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/page.php",
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.php",
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.html",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/header.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/banded.html",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpbootstrap/header.php"
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/header.php"
 	],
 	"find":
 	{
@@ -825,27 +833,28 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/statuses/index.html.erb",
+					"file": "Gemfile",
 					"settings":
 					{
-						"buffer_size": 717,
+						"buffer_size": 884,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								139
+								219,
+								219
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -855,24 +864,53 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/profiles/show.html.erb",
+					"file": "config/database.yml",
 					"settings":
 					{
-						"buffer_size": 772,
+						"buffer_size": 666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								198,
-								198
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gemfile.lock",
+					"settings":
+					{
+						"buffer_size": 3101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
