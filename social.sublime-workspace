@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_id"
+			],
+			[
+				"in",
+				"integer"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"stat",
+				"statuses"
+			],
+			[
 				"dow",
 				"downcased_email"
 			],
@@ -26,10 +42,6 @@
 			[
 				"pro",
 				"profile_name"
-			],
-			[
-				"user",
-				"user_id"
 			],
 			[
 				"con",
@@ -66,10 +78,6 @@
 			[
 				"b",
 				"inline-block"
-			],
-			[
-				"in",
-				"inline"
 			],
 			[
 				"d",
@@ -506,14 +514,6 @@
 			[
 				"EX",
 				"EXTRA_TEXT"
-			],
-			[
-				"Ema",
-				"emailComposer"
-			],
-			[
-				"button",
-				"button"
 			]
 		]
 	},
@@ -523,23 +523,47 @@
 			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 884,
+				"buffer_size": 919,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/database.yml",
+			"file": "test/functional/statuses_controller_test.rb",
 			"settings":
 			{
-				"buffer_size": 666,
+				"buffer_size": 2623,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Gemfile.lock",
+			"file": "app/controllers/statuses_controller.rb",
 			"settings":
 			{
-				"buffer_size": 3101,
+				"buffer_size": 2174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/statuses/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/unit/user_friendship_test.rb",
+			"settings":
+			{
+				"buffer_size": 130,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user_friendship.rb",
+			"settings":
+			{
+				"buffer_size": 120,
 				"line_ending": "Unix"
 			}
 		}
@@ -600,8 +624,13 @@
 	},
 	"file_history":
 	[
-		"/X/Program Files/PostgreSQL/9.3/data/pg_hba.conf",
+		"/C/Sites/social/db/migrate/20140121233007_create_user_friendships.rb",
+		"/C/Sites/treebook/config/database.yml",
 		"/C/Sites/social/config/database.yml",
+		"/C/Sites/social/db/development.sqlite3",
+		"/C/Sites/social/Gemfile.lock",
+		"/C/Sites/social/config/application.rb",
+		"/X/Program Files/PostgreSQL/9.3/data/pg_hba.conf",
 		"/C/Sites/social/app/views/statuses/index.html.erb",
 		"/C/Sites/social/app/views/profiles/show.html.erb",
 		"/C/Sites/social/app/helpers/application_helper.rb",
@@ -632,7 +661,6 @@
 		"/C/Sites/social/app/views/statuses/show.html.erb",
 		"/C/Sites/social/app/views/statuses/_form.html.erb",
 		"/C/Sites/social/app/views/statuses/new.html.erb",
-		"/C/Sites/social/config/application.rb",
 		"/C/Sites/social/app/views/statuses/edit.html.erb",
 		"/C/Sites/social/app/views/devise/sessions/new.html.erb",
 		"/C/Sites/social/app/assets/stylesheets/statuses.css.scss",
@@ -723,11 +751,7 @@
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/includes/meta-boxes.php",
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/style.css",
 		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/image.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/single-portfolio.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/page.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/workspace.html",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/header.php"
+		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/single-portfolio.php"
 	],
 	"find":
 	{
@@ -833,7 +857,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -841,15 +865,123 @@
 					"file": "Gemfile",
 					"settings":
 					{
-						"buffer_size": 884,
+						"buffer_size": 919,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								219,
-								219
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/functional/statuses_controller_test.rb",
+					"settings":
+					{
+						"buffer_size": 2623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2329,
+								2329
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1449.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/statuses_controller.rb",
+					"settings":
+					{
+						"buffer_size": 2174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1440,
+								1544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1173.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/statuses/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "test/unit/user_friendship_test.rb",
+					"settings":
+					{
+						"buffer_size": 130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								124,
+								124
 							]
 						],
 						"settings":
@@ -863,54 +995,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "config/database.yml",
+					"buffer": 5,
+					"file": "app/models/user_friendship.rb",
 					"settings":
 					{
-						"buffer_size": 666,
+						"buffer_size": 120,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								103,
+								103
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Gemfile.lock",
-					"settings":
-					{
-						"buffer_size": 3101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

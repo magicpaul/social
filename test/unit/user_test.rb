@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  should have_many(:user_friendships)
+  should have_many(:friends)
+
   test "a user should enter a first name" do
   	user = User.new
   	assert !user.save
@@ -29,5 +32,16 @@ class UserTest < ActiveSupport::TestCase
     user.password = user.password_confirmation = "password123"
     user.profile_name = "paulgrant_1"
     assert user.valid?
+  end
+  test "no errors raised when accessing friends" do
+    assert_nothing_raised do
+      users(:paul).friends
+    end
+  end
+
+  test "that creating friendships works" do
+    users(:paul).friends << users(:rach)
+    users(:paul).friends.reload
+    assert users(:paul).friends.include?(users(:rach))
   end
 end
