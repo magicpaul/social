@@ -10,6 +10,10 @@ group :development, :test do
   gem 'better_errors'
 end
 
+group :test do
+	gem 'shoulda'
+end
+
 gem 'pg'
 
 # Gems used only for assets and not required
