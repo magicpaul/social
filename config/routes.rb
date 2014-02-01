@@ -6,12 +6,15 @@ Social::Application.routes.draw do
     get 'register', to: 'devise/registrations#new', as: :register
     get 'sign_in', to: 'devise/sessions#new', as: :sign_in
   end
+
+  resources :user_friendships
+
   resources :statuses, path: 'updates'
   resources :statuses, path_names: { new: "create" }
   get 'feed', to: "statuses#index", as: :feed
   root :to => "statuses#index"
 
-  get '/:id', to: 'profiles#show'
+  get '/:id', to: 'profiles#show', as: 'profile'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

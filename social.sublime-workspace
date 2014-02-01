@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"fr",
+				"friend_id"
+			],
+			[
+				"n",
+				"name"
+			],
+			[
+				"prof",
+				"profile"
+			],
+			[
+				"la",
+				"laura"
+			],
+			[
+				"do",
+				"dob	Insert do |variable| … end"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"con",
+				"context"
+			],
+			[
+				"fre",
+				"friends"
+			],
+			[
+				"attr",
+				"attr_accessible"
+			],
+			[
 				"user",
 				"user_id"
 			],
@@ -24,10 +60,6 @@
 				"downcased_email"
 			],
 			[
-				"do",
-				"do"
-			],
-			[
 				"ass",
 				"assigns"
 			],
@@ -42,10 +74,6 @@
 			[
 				"pro",
 				"profile_name"
-			],
-			[
-				"con",
-				"content"
 			],
 			[
 				"asser",
@@ -486,84 +514,32 @@
 			[
 				"cl",
 				"click"
-			],
-			[
-				"sen",
-				"sendEmail"
-			],
-			[
-				"image",
-				"imageURI"
-			],
-			[
-				"email",
-				"emailTest"
-			],
-			[
-				"its",
-				"itspaulgrant"
-			],
-			[
-				"clea",
-				"clear"
-			],
-			[
-				"loc",
-				"localStorage"
-			],
-			[
-				"EX",
-				"EXTRA_TEXT"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "Gemfile",
+			"file": "test/functional/user_friendships_controller_test.rb",
 			"settings":
 			{
-				"buffer_size": 919,
+				"buffer_size": 1402,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/functional/statuses_controller_test.rb",
+			"file": "app/controllers/user_friendships_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2623,
+				"buffer_size": 474,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/statuses_controller.rb",
+			"file": "app/views/profiles/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 2174,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/statuses/_form.html.erb",
-			"settings":
-			{
-				"buffer_size": 228,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/unit/user_friendship_test.rb",
-			"settings":
-			{
-				"buffer_size": 130,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user_friendship.rb",
-			"settings":
-			{
-				"buffer_size": 120,
+				"buffer_size": 861,
 				"line_ending": "Unix"
 			}
 		}
@@ -624,6 +600,22 @@
 	},
 	"file_history":
 	[
+		"/C/Sites/magicpaul.github.io/.gitignore",
+		"/C/Sites/social/test/fixtures/users.yml",
+		"/C/Sites/social/test/unit/user_test.rb",
+		"/C/Sites/social/app/models/user.rb",
+		"/C/Sites/social/app/views/statuses/index.html.erb",
+		"/C/Sites/social/config/routes.rb",
+		"/C/Sites/social/app/views/user_friendships/new.html.erb",
+		"/C/Sites/social/app/controllers/profiles_controller.rb",
+		"/C/Sites/social/test/unit/user_friendship_test.rb",
+		"/C/Sites/social/app/models/user_friendship.rb",
+		"/C/Sites/social/app/views/statuses/_form.html.erb",
+		"/C/Sites/social/app/controllers/statuses_controller.rb",
+		"/C/Sites/social/test/functional/statuses_controller_test.rb",
+		"/C/Sites/social/Gemfile",
+		"/C/Sites/social/.gitignore",
+		"/C/Sites/social/test/fixtures/user_friendships.yml",
 		"/C/Sites/social/db/migrate/20140121233007_create_user_friendships.rb",
 		"/C/Sites/treebook/config/database.yml",
 		"/C/Sites/social/config/database.yml",
@@ -631,35 +623,25 @@
 		"/C/Sites/social/Gemfile.lock",
 		"/C/Sites/social/config/application.rb",
 		"/X/Program Files/PostgreSQL/9.3/data/pg_hba.conf",
-		"/C/Sites/social/app/views/statuses/index.html.erb",
 		"/C/Sites/social/app/views/profiles/show.html.erb",
 		"/C/Sites/social/app/helpers/application_helper.rb",
-		"/C/Sites/social/app/models/user.rb",
 		"/C/Sites/social/test/integration/custom_routes_test.rb",
 		"/C/Sites/social/test/fixtures/statuses.yml",
-		"/C/Sites/social/Gemfile",
-		"/C/Sites/social/config/routes.rb",
-		"/C/Sites/social/app/controllers/profiles_controller.rb",
 		"/C/Sites/social/test/functional/profiles_controller_test.rb",
-		"/C/Sites/social/test/fixtures/users.yml",
 		"/C/Sites/social/app/views/devise/registrations/edit.html.erb",
 		"/C/Sites/social/config/environments/development.rb",
 		"/C/Sites/social/app/views/layouts/application.html.erb",
 		"/C/Sites/social/app/views/devise/registrations/new.html.erb",
-		"/C/Sites/social/test/unit/user_test.rb",
 		"/C/Sites/social/db/migrate/20140120141929_add_profile_name_to_user.rb",
 		"/C/Sites/social/db/migrate/20140115213621_devise_create_users.rb",
 		"/C/Sites/social/app/views/devise/shared/_links.erb",
 		"/C/Sites/social/test/unit/status_test.rb",
 		"/C/Sites/social/app/models/status.rb",
 		"/X/Documents/GitHub/magicpaul.github.io/index.html",
-		"/C/Sites/social/test/functional/statuses_controller_test.rb",
-		"/C/Sites/social/app/controllers/statuses_controller.rb",
 		"/C/Sites/social/test/test_helper.rb",
 		"/C/Sites/social/app/assets/stylesheets/application.css",
 		"/C/Sites/social/db/migrate/20140115223041_add_user_id_to_status.rb",
 		"/C/Sites/social/app/views/statuses/show.html.erb",
-		"/C/Sites/social/app/views/statuses/_form.html.erb",
 		"/C/Sites/social/app/views/statuses/new.html.erb",
 		"/C/Sites/social/app/views/statuses/edit.html.erb",
 		"/C/Sites/social/app/views/devise/sessions/new.html.erb",
@@ -745,13 +727,7 @@
 		"/X/Web/ww1_paralax/stylesheets/curtain.css",
 		"/X/Web/ww1_paralax/stylesheets/foundation.css",
 		"/X/Web/ww1_paralax/stylesheets/base.css",
-		"/X/Web/ww1_paralax/explore.html",
-		"/X/Web/ww1_paralax/create.html",
-		"/X/Web/aurionlearning_test/html/index.html",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/includes/meta-boxes.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/style.css",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/image.php",
-		"/C/xampp/htdocs/wordpress/wp-content/themes/wpfoundation/single-portfolio.php"
+		"/X/Web/ww1_paralax/explore.html"
 	],
 	"find":
 	{
@@ -769,6 +745,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".id",
+			")\n",
 			"register",
 			"10",
 			"control",
@@ -857,162 +835,92 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Gemfile",
+					"file": "test/functional/user_friendships_controller_test.rb",
 					"settings":
 					{
-						"buffer_size": 919,
+						"buffer_size": 1402,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								244,
-								244
+								639,
+								639
+							],
+							[
+								794,
+								794
+							],
+							[
+								981,
+								981
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 138.0,
+						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/functional/statuses_controller_test.rb",
+					"file": "app/controllers/user_friendships_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2623,
+						"buffer_size": 474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2329,
-								2329
+								474,
+								474
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1449.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/controllers/statuses_controller.rb",
+					"file": "app/views/profiles/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 2174,
+						"buffer_size": 861,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1440,
-								1544
+								120,
+								120
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1173.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/statuses/_form.html.erb",
-					"settings":
-					{
-						"buffer_size": 228,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								228,
-								228
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "test/unit/user_friendship_test.rb",
-					"settings":
-					{
-						"buffer_size": 130,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								124,
-								124
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/models/user_friendship.rb",
-					"settings":
-					{
-						"buffer_size": 120,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								103,
-								103
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1064,6 +972,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
 			[
 				"si",
 				"config/initializers/simple_form.rb"
