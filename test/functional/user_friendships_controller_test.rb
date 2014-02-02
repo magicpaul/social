@@ -48,4 +48,51 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   		end
   	end
   end
+  context "#create" do
+    context "when not logged in" do
+      should "redirect to the login page" do
+        get :new
+        assert_response :redirect
+        assert_redirected_to sign_in_path
+      end
+    end
+    context "when logged in" do
+      setup do
+        sign_in users(:paul)
+      end
+      context "with no friend id" do
+        setup do
+          post :create
+        end
+
+        should "post flash message" do
+          assert !flash[:error].empty?
+        end
+      end
+      context "with valid friend id" do
+        setup do
+          post :create, user_friendship:{friend_id: users(:rach)}
+        end
+        should "create friendship object" do
+          assert assigns(:friend)
+          assert_equal users(:rach), assigns(:friend)
+        end
+        should "create user friendship object" do
+          assert assigns(:user_friendship)
+          assert_equal users(:paul), assigns(:user_friendship).user
+          assert_equal users(:rach), assigns(:user_friendship).friend
+        end
+        should "create a friendship" do
+          assert users(:paul).friends.include?(users(:rach))
+        end
+        should "redirect to profile path" do
+          assert_redirected_to profile_path(users(:rach))
+        end
+        should "display a success flash" do
+          assert flash[:success]
+          assert_equal "You are now friends with #{users(:rach).full_name}", flash[:success]
+        end
+      end
+    end
+  end
 end

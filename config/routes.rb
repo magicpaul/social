@@ -1,10 +1,18 @@
 Social::Application.routes.draw do
   get "profiles/show"
 
-  devise_for :users
-  devise_scope :user do
-    get 'register', to: 'devise/registrations#new', as: :register
-    get 'sign_in', to: 'devise/sessions#new', as: :sign_in
+  as :user do
+    get '/register', to: 'devise/registrations#new', as: :register
+    get '/sign_in', to: 'devise/sessions#new', as: :sign_in
+    get '/sign_out', to: 'devise/sessions#destroy', as: :sign_out
+  end
+
+  devise_for :users, skip: [:sessions]
+
+  as :user do
+    get '/sign_in' => 'devise/sessions#new', as: :new_user_session
+    post '/sign_in' => 'devise/sessions#create', as: :user_session
+    delete '/sign_out' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
   resources :user_friendships
