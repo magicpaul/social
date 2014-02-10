@@ -14,10 +14,16 @@
   }
 }
 .status .admin{
-	display: none;
+	opacity:0;
+  -wekit-transition:0.3s;
+    -moz-transition:0.3s;
+         transition:0.3s;
 }
 .status:hover .admin{
-	display: inline-block;
+	opacity:1;
+  -wekit-transition:0.3s;
+    -moz-transition:0.3s;
+         transition:0.3s;
 }
 .profile-feed{
   border: 5px whitesmoke solid;

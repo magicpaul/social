@@ -40,9 +40,9 @@
         <% flash.each do | type, message | %>
           <div class="alert-box <%= flash_class type%>" data-alert><%= message %><a href="#" class="close">&times;</a></div>
         <% end %>
-
-        <%= yield %>
-    </div>
+      </div>
+      <%= yield %>
+    
   </div>
     <%= javascript_include_tag "application" %>
   </body>
