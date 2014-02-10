@@ -15,6 +15,7 @@ group :production do
 end
 group :test do
 	gem 'shoulda'
+	gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required
@@ -33,6 +34,7 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'state_machine'
 
 
 # To use ActiveModel has_secure_password

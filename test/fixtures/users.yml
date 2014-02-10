@@ -3,6 +3,7 @@ paul:
  last_name: "Grant"
  email: "itspaulgrant@gmail.com"
  profile_name: "paulgrant1"
+ encrypted_password: $2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq
 
 laura:
  first_name: "Laura"
@@ -13,5 +14,5 @@ laura:
 rach:
  first_name: "Rach"
  last_name: "Goudy"
- email: "rach.s.g@hotmail.com"
+ email: "lesserspotteddingo@hotmail.com"
  profile_name: "rachg"

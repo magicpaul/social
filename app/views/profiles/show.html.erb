@@ -4,7 +4,7 @@
 <% if @statuses %>
 	<% @statuses.each do |status|%>
 		<div class="row status">
-		  <div class="large-2 columns small-3"><%= image_tag status.user.gravatar_url %></div>
+		  <div class="large-2 columns small-3"><%= image_tag status.user.gravatar_url, :class=> "profile-feed" %></div>
 		  <div class="large-10 columns">
 		    <p><strong><%= @user.full_name %> said:</strong> <%= status.content %></p>
 		    <ul class="inline-list meta">
