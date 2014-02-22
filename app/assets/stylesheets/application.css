@@ -17,6 +17,9 @@
 *{
 	font-family: "Open Sans", Helvetica, Sans-Serif!important;
 }
+h1,h2,h3,h4,h5,h6{
+	font-weight: 300!important;
+}
 .alert-box .close{
 	font-family:"Open Sans", Helvetica, Sans-Serif;
 }

@@ -1,0 +1,37 @@
+<div class="large-4 columns ">
+	<div class="profile-card text-center radius">
+		<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
+		<%= image_tag @user.gravatar_url,:class=> "profile-feed" %>
+		<h1><%= @user.full_name %></h1>
+		<% if signed_in? %>	
+			<div id="friend_status">
+				<% unless @user == current_user %>
+					<% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+						<%= link_to "Edit Friendship", edit_user_friendship_path(friend_id: @user), class: 'tiny success round button' %>
+					<% else %>
+						<%= link_to "Add Friend", new_user_friendship_path(friend_id: @user), class: 'tiny success round button', id:'add_friendship', data: {friend_id: @user.to_param} %>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="large-8 columns">
+	<% if @statuses %>
+		<% @statuses.each do |status|%>
+			<div class="row status">
+			  <div class="large-2 columns small-3"><%= image_tag status.user.gravatar_url %></div>
+			  <div class="large-10 columns">
+			    <p><strong><%= @user.full_name %> said:</strong> <%= status.content %></p>
+			    <ul class="inline-list meta">
+			      <li><%= link_to time_ago_in_words(status.created_at) + " ago", status %></li>
+			      <li class="admin"><%= link_to '', edit_status_path(status) , :class=> "fi-wrench so-edit" %></li>
+			      <li class="admin"><%= link_to "", status,method: :delete, data: { confirm: 'Are you sure?' }, :class => "fi-x so-delete" %></li>
+			    </ul>
+			  </div>
+			</div>
+		<% end %>
+	<% else %>
+		<h2>Nothing here</h2>
+	<% end %>
+</div>

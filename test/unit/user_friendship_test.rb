@@ -32,9 +32,35 @@ class UserFriendshipTest < ActiveSupport::TestCase
 			end
 		end
 	end
+	context "#mutual_friendship" do
+		setup do
+			UserFriendship.request users(:paul), users(:rach)
+			@friendship1 = users(:paul).user_friendships.where(friend_id: users(:rach).id).first
+			@friendship2 = users(:rach).user_friendships.where(friend_id: users(:paul).id).first
+
+		end
+		should "correctly find the mutual friendship" do
+			assert_equal @friendship2, @friendship1.mutual_friendship
+		end
+	end
+	context "#accept_mutual_friendship!" do
+		setup do
+			UserFriendship.request users(:paul), users(:rach)
+		end
+		should "accept the mutual friendship" do			
+			friendship1 = users(:paul).user_friendships.where(friend_id: users(:rach).id).first
+			friendship2 = users(:rach).user_friendships.where(friend_id: users(:paul).id).first
+
+			friendship1.accept_mutual_friendship!
+			friendship2.reload
+
+			assert_equal 'accepted', friendship2.state
+		end
+	end
+
 	context "#accept!" do
 		setup do
-			@userfriendship = UserFriendship.create user: users(:paul), friend: users(:rach)
+			@userfriendship = UserFriendship.request users(:paul), users(:rach)
 		end
 
 		should "set the state to accepted" do
@@ -51,9 +77,13 @@ class UserFriendshipTest < ActiveSupport::TestCase
 			users(:paul).friends.reload
 			assert users(:paul).friends.include?(users(:rach))
 		end
+		should "accept the mutual friendship" do
+			@userfriendship.accept_mutual_friendship!
+			assert_equal 'accepted', @userfriendship.mutual_friendship.state
+		end
 	end
 	context ".request" do
-		should "create two user frienships" do
+		should "create two user friendships" do
 			assert_difference 'UserFriendship.count', 2 do
 				UserFriendship.request(users(:paul), users(:rach))
 			end
@@ -62,6 +92,47 @@ class UserFriendshipTest < ActiveSupport::TestCase
 			assert_difference 'ActionMailer::Base.deliveries.size', 1 do
 				UserFriendship.request(users(:paul), users(:rach))
 			end
+		end
+	end
+	context "#delete_mutual_friendship!" do
+		setup do
+			UserFriendship.request users(:paul), users(:rach)
+			
+			@friendship1 = users(:paul).user_friendships.where(friend_id: users(:rach).id).first
+			@friendship2 = users(:rach).user_friendships.where(friend_id: users(:paul).id).first
+		end
+		should "delete the mutual friendship" do
+			assert_equal @friendship2, @friendship1.mutual_friendship
+			@friendship1.delete_mutual_friendship!
+			assert !UserFriendship.exists?(@friendship2.id)
+		end
+	end
+	context "on destroy" do
+		setup do
+			UserFriendship.request users(:paul), users(:rach)
+			
+			@friendship1 = users(:paul).user_friendships.where(friend_id: users(:rach).id).first
+			@friendship2 = users(:rach).user_friendships.where(friend_id: users(:paul).id).first
+		end
+		should "destroy mutual friendship" do
+			@friendship1.destroy
+			assert !UserFriendship.exists?(@friendship2.id)
+		end
+	end
+	context "#block!" do
+		setup do
+			@userfriendship = UserFriendship.request users(:paul), users(:rach)
+
+		end
+		should "set the state to blocked" do
+			@userfriendship.block!
+			assert_equal "blocked", @userfriendship.state
+			assert_equal "blocked", @userfriendship.mutual_friendship.state
+		end
+		should "not allow new user friendships after block" do
+			@userfriendship.block!
+			uf = UserFriendship.request users(:paul), users(:rach)
+			assert !uf.save
 		end
 	end
 end

@@ -15,12 +15,25 @@ Social::Application.routes.draw do
     delete '/sign_out' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resources :user_friendships
+  resources :user_friendships do
+    member do
+      put :accept
+      put :block
+    end
+  end
 
   resources :statuses, path: 'updates'
   resources :statuses, path_names: { new: "create" }
   get 'feed', to: "statuses#index", as: :feed
-  root :to => "statuses#index"
+  
+  authenticated :user do
+    root :to => "statuses#index"
+  end
+  unauthenticated :user do
+    devise_scope :user do 
+      get "/" => "devise/sessions#new"
+    end
+  end
 
   get '/:id', to: 'profiles#show', as: 'profile'
 

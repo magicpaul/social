@@ -1,12 +1,14 @@
-<% if @friend %>
-	<h1><%= @friend.full_name %></h1>
-	<p>Do you really want to friend <%= @friend.full_name %>?</p>
+<div class="large-12 columns">
+	<% if @friend %>
+		<h1><%= @friend.full_name %></h1>
+		<p>Do you really want to friend <%= @friend.full_name %>?</p>
 
-	<%= form_for @user_friendship, method: :post do |form| %>
-		<div class="panel">
-			<%= form.hidden_field :friend_id, value: @friend.profile_name %>
-			<%= submit_tag "Sure, why not?", class: 'button success' %>
-			<%= link_to "Cancel", profile_path(@friend), class: 'button secondary' %>
-		</div>
+		<%= form_for @user_friendship, method: :post do |form| %>
+			<div class="panel">
+				<%= form.hidden_field :friend_id, value: @friend.profile_name %>
+				<%= submit_tag "Sure, why not?", class: 'button success' %>
+				<%= link_to "Cancel", profile_path(@friend), class: 'button secondary' %>
+			</div>
+		<% end %>
 	<% end %>
-<% end %>
+</div>

@@ -1,3 +1,10 @@
 // Place all the styles related to the user_friendships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.friend.row{
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 0;
+}
+.friend.row a.button.tiny{
+	margin-top: 27px;
+}

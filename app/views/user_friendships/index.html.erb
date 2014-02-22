@@ -1,20 +1,22 @@
-<h1>Friends</h1>
+<div class="large-12 columns"><h1>Friends</h1>
+	<dl class="sub-nav">
+	  <dt>Filter:</dt>
+	  <dd class="<%= 'active' if params[:list] == '' || params[:list].blank? %>"><%= link_to 'All', user_friendships_path %></dd>
+	  <dd class="<%= 'active' if params[:list] == 'accepted' %>"><%= link_to 'Accepted', user_friendships_path(list: 'accepted') %></dd>
+	  <dd class="<%= 'active' if params[:list] == 'pending' %>"><%= link_to 'Pending', user_friendships_path(list: 'pending') %></dd>
+	  <dd class="<%= 'active' if params[:list] == 'requested' %>"><%= link_to 'Requested', user_friendships_path(list: 'requested') %></dd>
+	  <dd class="<%= 'active' if params[:list] == 'blocked' %>"><%= link_to 'Blocked', user_friendships_path(list: 'blocked') %></dd>
+	</dl>
 <% @user_friendships.each do |friendship| %>
 	<% friend = friendship.friend %>
 	<div id="<%= dom_id(friendship) %>" class="friend row">
-		<div class="large-2 columns small-3"><%=link_to image_tag(friend.gravatar_url,:class=> "profile-feed"),profile_path(friend) %>
+		<div class="large-2 columns small-3 small-centered large-uncentered"><%=link_to image_tag(friend.gravatar_url,:class=> "profile-feed"),profile_path(friend) %>
 		</div>
+	
+		<div class="large-6 columns friend-deets">
+			<h4><%= friend.full_name %></h4>
+			<em>Friendship is <%= friendship.state %></em>.
+		</div>
+		<div class="large-2 columns"><%= link_to "#{friendship.update_action_verbiage}", edit_user_friendship_path(friendship.friend.profile_name), class: "tiny button" %></div>
 	</div>
-	<div class="large-10 columns">
-		<strong><%= friend.full_name %></strong><br/>
-		<% if friendship.pending? %>
-		<em>Friendship is pending.</em><%= link_to "Delete request", edit_user_friendship_path(friendship) %>
-		<% end %>
-		<% if friendship.requested? %>
-		<em>Friendship requested.</em><%= link_to "Accept friendship", edit_user_friendship_path(friendship) %>
-		<% end %>
-		<% if friendship.accepted? %>
-		<em>Friendship started <%= friendship.updated_at %>.</em><%= link_to "Update friendship", edit_user_friendship_path(friendship) %>
-		<% end %>
-	</div>
-<% end %>
+<% end %></div>

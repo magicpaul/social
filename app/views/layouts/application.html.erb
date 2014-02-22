@@ -11,8 +11,8 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    
+  <body <% if !user_signed_in? %>style="background-image:url(<%= asset_path 'big-bg.jpg' %>)"<% end %>>
+    <% if user_signed_in? %>
     <div class="contain-to-grid">
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
@@ -24,8 +24,9 @@
         <section class="top-bar-section">
           <ul class="right">
             <% if user_signed_in? %>
-            <li><%= link_to "Friends", user_friendships_path %></li>
             <li class="profile-bar"><%= link_to current_user.full_name, edit_user_registration_path, html_options = {style:"background-image:url('#{current_user.gravatar_url_small}'); background-repeat:no-repeat; background-position:10px center;"} %></li>
+            <li><%= link_to "Friends", user_friendships_path %></li>
+            
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% else %>
             <li><%= link_to "Register", register_path, class: "button success" %></li>
@@ -34,15 +35,18 @@
           </ul>
         </section>
       </nav>
-    </div> 
+    </div> <% end %>
     <div class="row">
       <div class="large-12 columns">
         <% flash.each do | type, message | %>
-          <div class="alert-box <%= flash_class type%>" data-alert><%= message %><a href="#" class="close">&times;</a></div>
+          <div class="alert-box <%= flash_class type %>" data-alert><%= message %><a href="#" class="close">&times;</a></div>
         <% end %>
       </div>
-      <%= yield %>
+      
     
+  </div>
+  <div class="row">
+    <%= yield %>
   </div>
     <%= javascript_include_tag "application" %>
   </body>

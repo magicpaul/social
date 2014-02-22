@@ -16,3 +16,9 @@ rach:
  last_name: "Goudy"
  email: "lesserspotteddingo@hotmail.com"
  profile_name: "rachg"
+
+blocked_friend:
+ first_name: "Blocked"
+ last_name: "Friend"
+ email: "blocked@blocked.com"
+ profile_name: "everybodyhatesme"

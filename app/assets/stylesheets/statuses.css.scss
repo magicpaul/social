@@ -15,19 +15,20 @@
 }
 .status .admin{
 	opacity:0;
-  -wekit-transition:0.3s;
+  -webkit-transition:0.3s;
     -moz-transition:0.3s;
          transition:0.3s;
 }
 .status:hover .admin{
 	opacity:1;
-  -wekit-transition:0.3s;
+  -webkit-transition:0.3s;
     -moz-transition:0.3s;
          transition:0.3s;
 }
 .profile-feed{
   border: 5px whitesmoke solid;
   border-radius: 200px;
+  width: 96px;
 }
 .profile-bar a{
   padding-left: 40px!important;

@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Viewing friendship</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="large-4 columns ">
+		<div class="profile-card text-center radius">
+			<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
+			<%= image_tag @user_friendship.user.gravatar_url,:class=> "profile-feed" %>
+			<h1><%= @user_friendship.user.full_name %></h1>
+		</div>
+	</div>
+	<div class="large-4 columns ">
+		<div class="profile-card text-center radius">
+			<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
+			<%= image_tag @user_friendship.friend.gravatar_url,:class=> "profile-feed" %>
+			<h1><%= @user_friendship.friend.full_name %></h1>
+		</div>
+	</div>
+	<div class="large-4 columns ">
+		<div class="panel">
+			<h3><%= @user_friendship.sub_message %></h3>
+			<hr>
+			<% if @user_friendship.requested? %>
+				<%= simple_form_for @user_friendship, url: accept_user_friendship_path(@user_friendship),method: :put do |form| %>
+					<%= submit_tag "Accept", class: 'success button' %>
+				<% end %>
+			<% end %>
+			<%= simple_form_for @user_friendship, url: block_user_friendship_path(@user_friendship),method: :put do |form| %>
+					<%= submit_tag "Block", class: 'button' %>
+			<% end %>
+			<%= simple_form_for @user_friendship, url: user_friendship_path(@user_friendship), method: :delete do |form| %>
+				<%= submit_tag "Delete", class: 'alert button' %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		
+		
+	</div>
+</div>
