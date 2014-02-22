@@ -20,6 +20,8 @@ test:
 
 production:
   adapter: postgresql
+  encoding: unicode
   database: my_database_production
   pool: 5
-  timeout: 5000
+  username: postgres
+  password: password

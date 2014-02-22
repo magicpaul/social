@@ -10,9 +10,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'sqlite3'
 end
-group :production do
-	gem 'pg'
-end
+
 
 group :test do
 	gem 'shoulda'
@@ -40,6 +38,7 @@ gem 'draper'
 gem 'js-routes'
 gem 'paperclip'
 gem 'thin'
+gem 'pg'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
