@@ -13,9 +13,7 @@ end
 group :production do
 	gem 'pg'
 end
-group :development do
-  gem 'thin'
-end
+
 group :test do
 	gem 'shoulda'
 	gem 'factory_girl_rails'
@@ -41,7 +39,7 @@ gem 'state_machine'
 gem 'draper'
 gem 'js-routes'
 gem 'paperclip'
-
+gem 'thin'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
