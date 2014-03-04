@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140221153711) do
+ActiveRecord::Schema.define(:version => 20140301162239) do
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(:version => 20140221153711) do
 
   create_table "statuses", :force => true do |t|
     t.text     "content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.integer  "user_id"
     t.integer  "document_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
@@ -66,6 +70,10 @@ ActiveRecord::Schema.define(:version => 20140221153711) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

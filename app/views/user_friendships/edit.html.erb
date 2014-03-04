@@ -1,20 +1,19 @@
-<div class="row">
 	<div class="large-12 columns">
-		<h1>Viewing friendship</h1>
+		<h1 style="color:#eee;">Viewing friendship</h1>
 	</div>
 </div>
 <div class="row">
 	<div class="large-4 columns ">
 		<div class="profile-card text-center radius">
-			<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
-			<%= image_tag @user_friendship.user.gravatar_url,:class=> "profile-feed" %>
+			<div class="banner" style="background-image:url('<%= @user_friendship.user.banner.url(:normal)%>')"></div>
+			<%= image_tag @user_friendship.user.avatar.url(:thumb),:class=> "profile-feed" %>
 			<h1><%= @user_friendship.user.full_name %></h1>
 		</div>
 	</div>
 	<div class="large-4 columns ">
 		<div class="profile-card text-center radius">
-			<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
-			<%= image_tag @user_friendship.friend.gravatar_url,:class=> "profile-feed" %>
+			<div class="banner" style="background-image:url(<%= @user_friendship.friend.banner.url(:normal)%>)"></div>
+			<%= image_tag @user_friendship.friend.avatar.url(:thumb),:class=> "profile-feed" %>
 			<h1><%= @user_friendship.friend.full_name %></h1>
 		</div>
 	</div>

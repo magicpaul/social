@@ -36,5 +36,6 @@ Social::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.serve_static_assets = false
+  config.serve_static_assets = true
+  Paperclip.options[:command_path] = 'X:\Program Files\ImageMagick-6.8.8-Q16'
 end

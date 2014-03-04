@@ -1,10 +1,10 @@
 class StatusesController < ApplicationController
-  before_filter :authenticate_user!, only:[:index, :new, :create, :edit, :update]
+  before_filter :authenticate_user!, only: [:index, :new, :create, :edit, :update]
 
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all
+    @statuses = Status.all(:order => 'updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,7 +36,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/1/edit
   def edit
-    @status = Status.find(params[:id])
+    @status = current_user.statuses.find(params[:id])
   end
 
   # POST /statuses
@@ -76,7 +76,7 @@ class StatusesController < ApplicationController
   # DELETE /statuses/1
   # DELETE /statuses/1.json
   def destroy
-    @status = Status.find(params[:id])
+    @status = current_user.statuses.find(params[:id])
     @status.destroy
 
     respond_to do |format|

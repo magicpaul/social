@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .friend.row{
-	border-bottom: 1px solid #e8e8e8;
-	padding: 10px 0;
+	padding: 10px inherit;
 }
 .friend.row a.button.tiny{
 	margin-top: 27px;
+}
+.card{
+  background: rgba(#ffffff, 0.9);
+  padding:10px;
+  border-radius:3px;
 }

@@ -1,11 +1,19 @@
-<%= simple_form_for(@status) do |f| %>
+<%= simple_form_for(@status, :html => { :multipart => true }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :content, required: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+    
+    <% if f.object.attachment? %>
+    	<label>Attached file</label>
+    	<%= image_tag f.object.attachment.url, :class=>"attachment-thumb" %>
+    	<%= f.input :remove_attachment, as: :boolean, label: "Remove attachment?" %>
+    <% else %>
+      <div style="width:0; height:0; overflow:hidden;">
+        <%= f.file_field :attachment, :id=>"upfile" %>
+      </div>
+      <a class="tiny button" id="attach" data-upload>Add an attachment</a>
+    <% end %>
+    <%= f.button :submit, :class=>"tiny success button" %>
   </div>
 <% end %>

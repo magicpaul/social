@@ -11,20 +11,21 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body <% if !user_signed_in? %>style="background-image:url(<%= asset_path 'big-bg.jpg' %>)"<% end %>>
+  <body style="background-image:url(<%= asset_path 'big-bg.jpg' %>)">
     <% if user_signed_in? %>
     <div class="contain-to-grid">
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
+      <nav class="menu row">
+        <section class="title medium-4 columns">
             <h1><%= link_to "Social Network", feed_path %></h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-        </ul>
-        <section class="top-bar-section">
+        </section>
+        <section class="menu-section medium-8 columns">
           <ul class="right">
             <% if user_signed_in? %>
-            <li class="profile-bar"><%= link_to current_user.full_name, edit_user_registration_path, html_options = {style:"background-image:url('#{current_user.gravatar_url_small}'); background-repeat:no-repeat; background-position:10px center;"} %></li>
+            <li><a href="#" data-dropdown="drop" class="dropdown profile-bar"><%= image_tag current_user.avatar.url(:thumb),:class=> "profile-feed menu" %><%= current_user.full_name %></a><br>
+            <ul id="drop" data-dropdown-content class="f-dropdown">
+              <li><%= link_to "View Profile", profile_path(current_user) %></li>
+              <li><%= link_to "Edit Details", edit_user_registration_path %></li>
+            </ul></li>
             <li><%= link_to "Friends", user_friendships_path %></li>
             
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

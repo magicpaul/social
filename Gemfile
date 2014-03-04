@@ -36,7 +36,7 @@ gem 'devise'
 gem 'state_machine'
 gem 'draper'
 gem 'js-routes'
-gem 'paperclip'
+gem 'paperclip', '~> 3.5.3'
 gem 'thin'
 gem 'pg'
 # To use ActiveModel has_secure_password

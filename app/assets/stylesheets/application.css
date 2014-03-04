@@ -23,6 +23,11 @@ h1,h2,h3,h4,h5,h6{
 .alert-box .close{
 	font-family:"Open Sans", Helvetica, Sans-Serif;
 }
-.contain-to-grid{
-	margin-bottom:20px; 
+body{
+	background-color: #f4f4f4;
+}
+.profile-feed.menu{
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
 }
