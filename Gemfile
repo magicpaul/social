@@ -9,6 +9,7 @@ gem 'rails', '3.2.13'
 group :development, :test do
   gem 'better_errors'
   gem 'sqlite3'
+  gem 'binding_of_caller'
 end
 
 
@@ -39,6 +40,8 @@ gem 'js-routes'
 gem 'paperclip', '~> 3.5.3'
 gem 'thin'
 gem 'pg'
+gem 'acts_as_votable'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

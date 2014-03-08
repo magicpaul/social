@@ -5,24 +5,34 @@
 <div class="row feed">
 <% @statuses.each do |status| %>
 	<% if can_display_status?(status) %>
-		<div class="small-12 medium-6 large-4 columns columns ">
-			<div class="bannerhint" style="background-image:url('<%= status.user.banner.url(:normal)%>');"></div>
+		<article class="small-12 medium-6 large-4 columns status-outer">
+			<div class="bannerhint <% if signed_in? && status.user == current_user %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
+				<% if signed_in? && status.user == current_user %>
+				       <div class="admin-box">
+				        <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
+				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true  %></div>
+				<% end %>
+			</div>
 			<div class="feed-card status">
 
 				<div class="banner clearfix">
 
 					<div class="postbox"><%=link_to image_tag(status.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(status.user) %></div>
-						
+
 			    	<div class="postbox"><h4><%= status.user.full_name %></h4>
-			    		<small><%= link_to time_ago_in_words(status.created_at) + " ago", status %></small></div>
-					<% if signed_in? && status.user == current_user %>
-					  <div class="meta">
-				      	<%= link_to '', edit_status_path(status) , :class=> "admin fi-wrench so-edit" %>  
-				      	<%= link_to "", status,method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete" %>
-					  </div>
-					<% end %>
+			    		<small><%= time_ago_in_words(status.created_at) + " ago" %></small></div>
+					<div class="meta">
+						<span id="like-button-<%= status.id %>">
+							<%if current_user.voted_up_on? status%>
+							    <%=  render 'unlike', :status => status %>
+							<%else%>
+							    <%= render 'like', :status => status %>
+							<%end%>
+						</span>
+						<span id="likes-count-<%= status.id %>"><%= status.likes.size %></span>
+					</div>
 				</div>
-				
+
 			    <div class="postcontent">
 					<p><%= status.content %></p>
 					<% if status.attachment? %>
@@ -30,9 +40,9 @@
 						<%= image_tag status.attachment.url %>
 					<% end %>
 				</div>
-			    
+
 			  </div>
-			</div>
+			</article>
 		<% end %>
 	<% end %>
 

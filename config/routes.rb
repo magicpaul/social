@@ -21,16 +21,21 @@ Social::Application.routes.draw do
       put :block
     end
   end
-
+  resources :statuses do
+    member do
+       post 'like'
+       post 'unlike'
+    end
+  end
   resources :statuses, path: 'updates'
   resources :statuses, path_names: { new: "create" }
   get 'feed', to: "statuses#index", as: :feed
-  
+
   authenticated :user do
     root :to => "statuses#index"
   end
   unauthenticated :user do
-    devise_scope :user do 
+    devise_scope :user do
       get "/" => "devise/sessions#new"
     end
   end

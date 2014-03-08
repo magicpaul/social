@@ -15,12 +15,7 @@ class StatusesController < ApplicationController
   # GET /statuses/1
   # GET /statuses/1.json
   def show
-    @status = Status.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @status }
-    end
+    redirect_to root_path
   end
 
   # GET /statuses/new
@@ -60,7 +55,7 @@ class StatusesController < ApplicationController
   def update
     @status = current_user.statuses.find(params[:id])
     if params[:status] && params[:status].has_key?(:user_id)
-      params[:status].delete(:user_id) 
+      params[:status].delete(:user_id)
     end
     respond_to do |format|
       if @status.update_attributes(params[:status])
@@ -82,6 +77,24 @@ class StatusesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to statuses_url }
       format.json { head :no_content }
+      format.js { render :nothing => true }
+    end
+  end
+  def like
+    @status = Status.find(params[:id])
+    current_user.upvotes @status
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
+
+  def unlike
+    @status = Status.find(params[:id])
+    current_user.downvotes @status
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
   end
 end

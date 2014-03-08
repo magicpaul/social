@@ -1,0 +1,2 @@
+$("#like-button-<%= @status.id %>").html("<%= escape_javascript(render 'unlike', :status => @status) %>")
+$("#likes-count-<%= @status.id %>").html('<%= @status.likes.size %>')
