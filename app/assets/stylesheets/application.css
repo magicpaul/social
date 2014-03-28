@@ -13,7 +13,6 @@
 
  *= require_tree .
  */
-  /*@import "foundation";*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 *{
 	font-family: "Open Sans", Helvetica, Sans-Serif!important;
