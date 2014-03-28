@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140307175023) do
+ActiveRecord::Schema.define(:version => 20140316180615) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "action"
+    t.integer  "targetable_id"
+    t.string   "targetable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "activities", ["targetable_id", "targetable_type"], :name => "index_activities_on_targetable_id_and_targetable_type"
+  add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
+
+  create_table "answers", :force => true do |t|
+    t.string   "text"
+    t.boolean  "correct"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
@@ -25,20 +45,20 @@ ActiveRecord::Schema.define(:version => 20140307175023) do
 
   add_index "documents", ["user_id"], :name => "index_documents_on_user_id"
 
-  create_table "favorite_statuses", :force => true do |t|
-    t.integer  "status_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "questions", :force => true do |t|
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "hearts", :force => true do |t|
-    t.string   "user_id"
-    t.string   "status_id"
-    t.integer  "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "read_marks", :force => true do |t|
+    t.integer  "readable_id"
+    t.integer  "user_id",                     :null => false
+    t.string   "readable_type", :limit => 20, :null => false
+    t.datetime "timestamp"
   end
+
+  add_index "read_marks", ["user_id", "readable_type", "readable_id"], :name => "index_read_marks_on_user_id_and_readable_type_and_readable_id"
 
   create_table "statuses", :force => true do |t|
     t.text     "content"

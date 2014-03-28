@@ -31,7 +31,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.1.1.0'
 gem 'simple_form'
 gem 'devise'
 gem 'state_machine'
@@ -41,6 +41,10 @@ gem 'paperclip', '~> 3.5.3'
 gem 'thin'
 gem 'pg'
 gem 'acts_as_votable'
+gem 'will_paginate-foundation'
+gem 'unread'
+# gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

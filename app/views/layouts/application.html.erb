@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Fun Revision" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -16,19 +16,48 @@
     <div class="contain-to-grid">
       <nav class="menu row">
         <section class="title medium-4 columns">
-            <h1><%= link_to "Social Network", feed_path %></h1>
+            <h1><%= link_to image_tag(asset_path 'logo.png'), feed_path %></h1>
         </section>
         <section class="menu-section medium-8 columns">
           <ul class="right">
             <% if user_signed_in? %>
-            <li><a href="#" data-dropdown="drop" class="dropdown profile-bar"><%= image_tag current_user.avatar.url(:thumb),:class=> "profile-feed menu" %><%= current_user.full_name %></a><br>
-            <ul id="drop" data-dropdown-content class="f-dropdown">
-              <li><%= link_to "View Profile", profile_path(current_user) %></li>
-              <li><%= link_to "Edit Details", edit_user_registration_path %></li>
-            </ul></li>
-            <li><%= link_to "Friends", user_friendships_path %></li>
-            
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+            <li>
+              <a data-dropdown="drop1" class="dropdown profile-bar" title="<%= current_user.full_name %>">
+                <%= image_tag current_user.avatar.url(:thumb),:class=> "profile-feed menu"%>
+              </a>
+              <ul id="drop1" data-dropdown-content class="f-dropdown">
+                <li><h4><%= current_user.full_name %></h4></li>
+                <li><%= link_to "Activity Feed", activities_path %></li>
+                <li><%= link_to "View Profile", profile_path(current_user) %></li>
+                <li><%= link_to "Edit Details", edit_user_registration_path %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+            <li class="iconic"  id="activity-feed">
+              <a href="#" data-dropdown="drop2">
+                <span class="fi-sound lightgreen menu-item" title="Notifications"></span>
+                <div id="count"></div>
+              </a>
+              <div id="drop2" data-dropdown-content class="f-dropdown content">
+                <div id="subtle-notif">
+                  <i class="fi-sound"></i>
+                  <p>Nothing here!</p>
+                </div>
+              </div>
+            </li>
+            <li class="iconic">
+              <%= link_to '#' do %>
+                <span class="fi-trophy has_tip midgreen menu-item" title="Quizzes"></span>
+              <% end %>
+            </li>
+            <li class="iconic">
+              <%= link_to user_friendships_path do %>
+                <span class="fi-torsos-all has_tip darkgreen menu-item" title="Friends"></span>
+              <% end %>
+            </li>
+
+
             <% else %>
             <li><%= link_to "Register", register_path, class: "button success" %></li>
             <li><%= link_to "Sign In", sign_in_path %></li>
@@ -43,12 +72,30 @@
           <div class="alert-box <%= flash_class type %>" data-alert><%= message %><a href="#" class="close">&times;</a></div>
         <% end %>
       </div>
-      
-    
+
+
   </div>
   <div class="row">
     <%= yield %>
   </div>
     <%= javascript_include_tag "application" %>
   </body>
+  <script id="activities-template" type="text/x-handlebars-template">
+      <div id="dropcontain">
+        <li><a href="{{activityFeedLink}}">All Activity</a></li>
+        <li class="divider"></li>
+        {{#each activities}}
+          {{activityLink}}
+        {{/each}}
+
+
+      </div>
+  </script>
+  <script id="count-template" type="text/x-handlebars-template">{{count}}</script>
+   <script id="no-activities-template" type="text/x-handlebars-template">
+      <div id="subtle-notif">
+        <i class="fi-sound"></i>
+        <p>Nothing here!</p>
+      </div>
+  </script>
 </html>

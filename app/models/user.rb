@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
                             message: 'Must be formatted correctly'
                            }
   acts_as_voter
+  acts_as_reader
+  has_many :activities
   has_many :statuses
   has_many :user_friendships
   has_many :friends, through: :user_friendships,
@@ -78,5 +80,15 @@ class User < ActiveRecord::Base
   end
   def is_self?(other_user)
     true
+  end
+  def has_unread?(activity)
+    activity.unread?(self)
+  end
+  def create_activity(item, action)
+    activity = activities.new
+    activity.targetable = item
+    activity.action = action
+    activity.save
+    activity
   end
 end

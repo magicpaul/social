@@ -13,6 +13,7 @@
 
  *= require_tree .
  */
+  /*@import "foundation";*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 *{
 	font-family: "Open Sans", Helvetica, Sans-Serif!important;
@@ -27,7 +28,166 @@ body{
 	background-color: #f4f4f4;
 }
 .profile-feed.menu{
-	width: 32px;
-	height: 32px;
-	margin-right: 10px;
+	width: auto;
+	height: 100%;
+    border-radius: 0;
+}
+.contain-to-grid{
+  margin-bottom:20px;
+  background: #eee;
+}
+.contain-to-grid a{
+  color: #666;
+}
+.contain-to-grid a:hover{
+  color: #333;
+}
+.menu-section >ul{
+  margin: 0;
+}
+.menu-section > ul > li{
+  float: left;
+  list-style: none;
+
+}
+.menu-section > ul > li > a{
+  display: inline-block;
+  height: 72px;
+  line-height: 72px;
+  color: white;
+  position: relative;
+
+}
+.menu-section > ul > li > a:hover{
+    color: #eee;
+}
+.menu-section > ul > li.iconic > a > span{
+    display: inline-block;
+    width: 72px;
+    height: 100%;
+    text-align: center;
+    font-size: 36px;
+}
+.menu-section > ul > li > a.profile-bar{
+    line-height: 0;
+    padding: 0;
+}
+.menu-section > ul > li > a.profile-bar span.menu-item{
+    padding: 0 10px;
+}
+.menu-section > ul > li > a:hover{
+  background: #ddd;
+}
+.lightgreen{
+    background-color:#77cd90;
+}
+.midgreen{
+    background-color:#4bb56c;
+}
+.darkgreen{
+    background-color:#1fab47;
+}
+.f-dropdown li h4 {
+  display: block;
+  padding: 0.5rem;
+  color: #333;
+  cursor: default;
+  border-bottom: 1px solid #eee
+}
+.f-dropdown li:hover h4 {
+    background-color: white;
+}
+#subtle-notif{
+    padding: 60px;
+    text-align: center;
+    color: #c5c5c5;
+}
+#subtle-notif i{
+    font-size: 50px;
+}
+.nopad{padding: 0!important;}
+.nomarg{margin: 0!important;}
+#count{
+  display: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #77cd90;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  font-weight: 700!important;
+}
+li.divider{
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #eee;
+}
+#drop2{
+  max-width: 380px!important;
+  padding: 0;
+}
+#drop2.open{
+  left: 272px!important;
+}
+#drop2.f-dropdown:before,#drop2.f-dropdown:after{
+  left:190px!important;
+}
+#drop2 #dropcontain{
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  max-height: 600px;
+  padding:10px;
+}
+.notify-block a.remove-activity{
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 16px;
+  opacity: .27;
+  font-size: 20px;
+  line-height: 1;
+}
+.notify-block:hover a.remove-activity{
+  opacity: .55
+}
+.notify-block{
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 80px;
+  width: 360px;
+  background-color: #f4f4f4!important;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -webkit-transition: margin .4s;
+  transition: margin .4s;
+  background-color: white;
+  margin-bottom: 8px!important;
+  overflow: hidden;
+  position: relative;
+}
+.notify-block img{
+width: 80px;
+height: 80px;
+margin-right: 20px;
+display: inline-block;
+vertical-align: middle;
+}
+.notify-block a.action{
+  height: 80px;
+  width: 240px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  margin-top: 24px;
+}
+.notify-block.dismiss{
+  margin-left: 800px;
 }

@@ -79,5 +79,5 @@ jude.statuses.create(content: "This site is awesome!")
 greg.statuses.create(content: "Hello, is it me you're looking for?")
 
 UserFriendship.request(seed_user, laura).accept!
-UserFriendship.request(seed_user, jude)
+UserFriendship.request(jude, seed_user)
 UserFriendship.request(greg, seed_user)

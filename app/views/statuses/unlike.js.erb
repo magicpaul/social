@@ -1,2 +1,3 @@
-$("#like-button-<%= @status.id %>").html("<%= escape_javascript(render 'like', :status => @status) %>")
-$("#likes-count-<%= @status.id %>").html('<%= @status.likes.size %>')
+$("#like-button-<%= @status.id %>").html('<%= escape_javascript(render 'like', :status => @status) %>');
+$("#like-button-<%= @status.id %> a").removeClass('activated').addClass('activated');
+$("#likes-count-<%= @status.id %>").html('<%= @status.likes.size %>').removeClass('unlike');

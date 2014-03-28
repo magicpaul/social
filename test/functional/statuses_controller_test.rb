@@ -5,12 +5,6 @@ class StatusesControllerTest < ActionController::TestCase
     @status = statuses(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:statuses)
-  end
-
   test "should be redirected when not logged in" do
     get :new
     assert_response :redirect
@@ -31,7 +25,14 @@ class StatusesControllerTest < ActionController::TestCase
 
   test "should create status when logged in" do
     sign_in users(:paul)
-    assert_difference('Status.count') do
+    assert_difference('Activity.count') do
+      post :create, status: { content: @status.content }
+    end
+  end
+
+  test "should create an activity item for status when logged in" do
+    sign_in users(:paul)
+    assert_difference('Activity.count') do
       post :create, status: { content: @status.content }
     end
 
@@ -48,12 +49,6 @@ class StatusesControllerTest < ActionController::TestCase
     assert_equal assigns(:status).user_id, users(:paul).id
   end
 
-  
-
-  test "should show status" do
-    get :show, id: @status
-    assert_response :success
-  end
 
   test "should be logged in to update a status" do
     post :update, id: @status, status: { content: @status.content }
@@ -72,11 +67,16 @@ class StatusesControllerTest < ActionController::TestCase
     put :update, id: @status, status: { content: @status.content }
     assert_redirected_to status_path(assigns(:status))
   end
+  test "should create an activity for update status" do
+    sign_in users(:paul)
+    assert_difference('Activity.count') do
+      put :update, id: @status, status: { content: @status.content }
+    end
+  end
 
   test "should update status for current user when logged in" do
     sign_in users(:paul)
     put :update, id: @status, status: { content: @status.content, user_id: users(:laura).id }
-    assert_redirected_to status_path(assigns(:status))
     assert_equal assigns(:status).user_id, users(:paul).id
   end
 
@@ -87,11 +87,4 @@ class StatusesControllerTest < ActionController::TestCase
     assert_equal assigns(:status).user_id, users(:paul).id
   end
 
-  test "should destroy status" do
-    assert_difference('Status.count', -1) do
-      delete :destroy, id: @status
-    end
-
-    assert_redirected_to statuses_path
-  end
 end

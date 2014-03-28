@@ -5,12 +5,12 @@
 <div class="row feed">
 <% @statuses.each do |status| %>
 	<% if can_display_status?(status) %>
-		<article class="small-12 medium-6 large-4 columns status-outer">
+		<article class="small-12 medium-6 large-4 columns status-outer" id="status-id-<%= status.id %>">
 			<div class="bannerhint <% if signed_in? && status.user == current_user %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
 				<% if signed_in? && status.user == current_user %>
 				       <div class="admin-box">
 				        <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
-				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true  %></div>
+				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>
 				<% end %>
 			</div>
 			<div class="feed-card status">
@@ -22,14 +22,14 @@
 			    	<div class="postbox"><h4><%= status.user.full_name %></h4>
 			    		<small><%= time_ago_in_words(status.created_at) + " ago" %></small></div>
 					<div class="meta">
-						<span id="like-button-<%= status.id %>">
+						<span id="like-button-<%= status.id %>" class="likes-button">
 							<%if current_user.voted_up_on? status%>
 							    <%=  render 'unlike', :status => status %>
 							<%else%>
 							    <%= render 'like', :status => status %>
 							<%end%>
 						</span>
-						<span id="likes-count-<%= status.id %>"><%= status.likes.size %></span>
+						<span id="likes-count-<%= status.id %>" class="likes-count <%if current_user.voted_up_on? status%>unlike<% end %>"><%= status.likes.size %></span>
 					</div>
 				</div>
 

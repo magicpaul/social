@@ -1,4 +1,16 @@
 Social::Application.routes.draw do
+  resources :answers
+
+
+  resources :questions
+
+  resources :activities, only: [:index]
+  resources :activities do
+    member do
+      post 'read'
+      post 'all_read'
+    end
+  end
   get "profiles/show"
 
   as :user do

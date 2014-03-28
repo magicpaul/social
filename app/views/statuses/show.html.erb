@@ -1,22 +1,38 @@
-<div class="small-12 medium-6 large-4 columns small-centered columns ">
-	<div class="profile-card text-center radius">
-		<div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
-		<%= avatar_profile_link @status.user,:class=> "profile-feed" %>
-		<h1><%= @status.user.full_name %></h1>
-		<h4><small><%= time_ago_in_words(@status.created_at) + " ago" %></small></h4>
-		<p>
-	      <%= @status.content %>
-	    </p>
-	    <% if @status.attachment? %>
-	    	<%= image_tag @status.attachment.url %>
-	    <% end %>
-	    <div class="meta">
-	      <%= link_to 'Back', statuses_path %>
-	      <% if signed_in? && @status.user == current_user %>
-	        |
-	        <%= link_to "Edit", edit_status_path(@status) %> | 
-	        <%= link_to "Delete", @status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
-	      <% end %>
-	    </div>
+<article class="small-12 medium-8 large-6 small-centered columns status-outer" id="status-id-<%= @status.id %>" style="margin-top:20px;">
+	<div class="bannerhint <% if signed_in? && @status.user == current_user %>peek<% end %>" style="background-image:url('<%= @status.user.banner.url(:normal)%>');">
+		<% if signed_in? && @status.user == current_user %>
+		       <div class="admin-box">
+		        <%= link_to '', edit_status_path(@status), :class=> "admin fi-wrench so-edit" %>
+		      	<%= link_to '', @status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>
+		<% end %>
 	</div>
-</div>
+	<div class="feed-card status">
+
+		<div class="banner clearfix">
+
+			<div class="postbox"><%=link_to image_tag(@status.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(@status.user) %></div>
+
+	    	<div class="postbox"><h4><%= @status.user.full_name %></h4>
+	    		<small><%= time_ago_in_words(@status.created_at) + " ago" %></small></div>
+			<div class="meta">
+				<span id="like-button-<%= @status.id %>" class="likes-button">
+					<%if current_user.voted_up_on? @status%>
+					    <%=  render 'unlike', :status => @status %>
+					<%else%>
+					    <%= render 'like', :status => @status %>
+					<%end%>
+				</span>
+				<span id="likes-count-<%= @status.id %>" class="likes-count <%if current_user.voted_up_on? @status%>unlike<% end %>"><%= @status.likes.size %></span>
+			</div>
+		</div>
+
+	    <div class="postcontent">
+			<p><%= @status.content %></p>
+			<% if @status.attachment? %>
+				<span class="label">Attachment</span>
+				<%= image_tag @status.attachment.url %>
+			<% end %>
+		</div>
+
+	</div>
+</article>

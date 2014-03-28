@@ -15,5 +15,4 @@ class Status < ActiveRecord::Base
   		self.attachment = nil
   	end
   end
-
 end

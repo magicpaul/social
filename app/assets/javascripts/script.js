@@ -1,6 +1,5 @@
 Foundation.set_namespace = function() {};
-$(function(){ 
-	
+$(function(){
 	$('#form').promin({
         'events': {
             'submit': function(fields) {
@@ -31,7 +30,7 @@ $(function(){
             }
         }
     });
-    $(document).foundation(); 
+    $(document).foundation();
     $('[data-upload]').click(function(){
         $('#upfile').click();
     });

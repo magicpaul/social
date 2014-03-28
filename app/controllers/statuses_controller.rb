@@ -15,7 +15,12 @@ class StatusesController < ApplicationController
   # GET /statuses/1
   # GET /statuses/1.json
   def show
-    redirect_to root_path
+    @status = Status.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @status }
+    end
   end
 
   # GET /statuses/new
@@ -38,10 +43,10 @@ class StatusesController < ApplicationController
   # POST /statuses.json
   def create
     @status = current_user.statuses.new(params[:status])
-
     respond_to do |format|
       if @status.save
-        format.html { redirect_to @status, notice: 'Status was successfully created.' }
+        current_user.create_activity(@status, 'created')
+        format.html { redirect_to statuses_url, notice: 'Status was successfully created.' }
         format.json { render json: @status, status: :created, location: @status }
       else
         format.html { render action: "new" }
@@ -59,7 +64,8 @@ class StatusesController < ApplicationController
     end
     respond_to do |format|
       if @status.update_attributes(params[:status])
-        format.html { redirect_to @status, notice: 'Status was successfully updated.' }
+        current_user.create_activity(@status, 'updated')
+        format.html { redirect_to statuses_url, notice: 'Status was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,12 +83,13 @@ class StatusesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to statuses_url }
       format.json { head :no_content }
-      format.js { render :nothing => true }
+      format.js
     end
   end
   def like
     @status = Status.find(params[:id])
     current_user.upvotes @status
+    current_user.create_activity(@status, 'liked')
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js

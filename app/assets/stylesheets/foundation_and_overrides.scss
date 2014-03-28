@@ -1,9 +1,9 @@
-// 
+//
 // FOUNDATION SETTINGS
 //
 
 // Uncomment to use rem-calc() in your settings
-// @import "foundation/functions";
+   @import "foundation/functions";
 
 // $experimental: true;
 
@@ -19,7 +19,7 @@
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+   $rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -31,12 +31,12 @@
 // $include-html-grid-classes: $include-html-classes;
 
 // $row-width: rem-calc(1000);
-// $column-gutter: rem-calc(30);
+   $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
 // We use these to control various global styles
    $body-bg: #e5e5e5;
-   $body-font-color: #666;
+   $body-font-color: #7c8990;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -115,7 +115,7 @@
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
 
-// $accordion-content-padding: $column-gutter/2;
+   $accordion-content-padding: $column-gutter/2;
 // $accordion-content-active-bg-color: #fff;
 
 // Alert Boxes
@@ -240,7 +240,7 @@
 // $f-dropdown-max-width: 200px;
 // $f-dropdown-height: auto;
 // $f-dropdown-max-height: none;
-// $f-dropdown-margin-top: 2px;
+   $f-dropdown-margin-top: 14px;
 
 // We use this to control the background color
 // $f-dropdown-bg: #fff;
@@ -251,9 +251,9 @@
 // $f-dropdown-border-color: darken(#fff, 20%);
 
 // We use these to style the triangle pip.
-// $f-dropdown-triangle-size: 6px;
+   $f-dropdown-triangle-size: 10px;
 // $f-dropdown-triangle-color: #fff;
-// $f-dropdown-triangle-side-offset: 10px;
+   $f-dropdown-triangle-side-offset: 10px;
 
 // We use these to control styles for the list elements.
 // $f-dropdown-list-style: none;
@@ -927,8 +927,8 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+   $topbar-bg-color: #eee;
+   $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -949,9 +949,9 @@
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
+// $topbar-link-color: #666;
+   $topbar-link-color-hover: #333;
+   $topbar-link-color-active: #666;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
