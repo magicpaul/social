@@ -29,7 +29,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+group :production do
+  gem 'rails_12factor'
+end
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.1.1.0'
 gem 'simple_form'

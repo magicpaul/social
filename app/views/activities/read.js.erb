@@ -1,0 +1,5 @@
+$("#read-activity-id-<%= @activity.id %>").fadeOut();
+$("#read-activity-menu-id-<%= @activity.id %>").addClass('dismiss');
+setTimeout(function() {
+    window.loadedActivities.removeValue('id', <%= @activity.id %>);
+}, 400);

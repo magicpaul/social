@@ -1,0 +1,23 @@
+<div class="large-12 columns">
+    <div class="card">
+        <h1>Activities</h1>
+        <% @activities.each do |activity| %>
+            <hr>
+            <div class="friend row">
+                <div class="large-2 columns small-2">
+                    <%=link_to image_tag(activity.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(activity.user) %>
+                </div>
+                <div class="large-8 small-8 columns">
+                    <h4 class="nomarg"><%= activity.user.full_name %></h4>
+                    <small><%= time_ago_in_words(activity.updated_at) + " ago" %></small>
+                    <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}",
+                               locals: { activity: activity } %>
+                </div>
+                <div class="small-2 columns">
+                    <% if current_user.has_unread?(activity) %>
+                        <%= link_to 'Read', read_activity_path(activity), method: :post, :class => "button", :id => "read-activity-id-#{activity.id}" %>
+                    <% end %>
+                </div>
+
+            </div>
+        <%end%>

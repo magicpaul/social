@@ -1,0 +1,7 @@
+<p>is now friends with
+<% if activity.targetable %>
+  <%= activity.targetable.friend.full_name %>.
+<% else %>
+  a user.
+<% end %>
+</p>
