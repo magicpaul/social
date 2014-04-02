@@ -45,6 +45,7 @@ gem 'pg'
 gem 'acts_as_votable'
 gem 'will_paginate-foundation'
 gem 'unread'
+gem 'merit'
 # gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
 
 

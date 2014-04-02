@@ -1,8 +1,13 @@
 Social::Application.routes.draw do
-  resources :answers
-
-
-  resources :questions
+  resources :quizzes do
+    member do
+      post 'start'
+      get 'question'
+      post 'question'
+      post 'answer'
+      get 'end'
+    end
+  end
 
   resources :activities, only: [:index]
   resources :activities do

@@ -1,0 +1,17 @@
+<div class="large-12 columns">
+    <div class="card">
+            <div class="ac-custom text-center">
+                <h1>Quiz Results</h1>
+                <span class="fi-trophy <%= get_badge(@score) %>"></span>
+                <p id="question">You answered correctly <%= @correct %> out of <%= @total %> questions.</p>
+
+                <p id="score"><%= @score %>%</p>
+
+                <%= form_tag({:controller => "quizzes", :action => "index"}, :method => "get") do %>
+                  <div class="center">
+                     <%= submit_tag("Take another quiz", :class => "success button") %>
+                  </div>
+                <% end %>
+            </div>
+    </div>
+</div>

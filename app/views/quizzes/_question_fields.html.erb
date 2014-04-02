@@ -1,0 +1,18 @@
+<fieldset>
+<legend>Question</legend>
+    <div class="row">
+        <div class="small-10 columns">
+           <%= f.input_field :content, required: true, as: :text  %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.hidden_field :_destroy %>
+          <%= link_to "remove", '#', class: "remove_fields tiny alert button" %>
+        </div>
+    </div>
+
+
+  <%= f.fields_for :answers do |builder| %>
+    <%= render 'answer_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Answer", f, :answers %>
+</fieldset>

@@ -1,0 +1,16 @@
+<div class="large-12 columns">
+    <div class="card"><h1>Quizzes</h1>
+
+        <% @quizzes.each do |quiz| %>
+          <div class="article">
+            <h3><%= quiz.name %></h3>
+            <%= link_to "edit quiz", quiz, class: "button" %>
+            <%= link_to "take quiz", start_quiz_path(quiz), class: "success button",  method: "post" %>
+          </div>
+        <% end %>
+
+
+
+<p><%= link_to 'New quiz', new_quiz_path %></p>
+    </div>
+</div>

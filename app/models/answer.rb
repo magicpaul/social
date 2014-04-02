@@ -1,3 +1,5 @@
 class Answer < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :content, :question_id, :correct
+  belongs_to :question
+  validates :content, presence: true
 end

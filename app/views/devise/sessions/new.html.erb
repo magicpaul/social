@@ -1,5 +1,5 @@
 <div class="small-12 medium-6 large-4 columns small-centered text-center login-stuff" style="margin-top:50px;">
-<h1>Social Network</h1>
+<%= image_tag(asset_path 'logo-white.png') %>
 <h2>Sign in</h2>
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "profile-card text-center radius", id:"form", autocomplete: "off"} ) do |f| %>
 
@@ -16,7 +16,7 @@
   <div id="description">
     <p class="muted"><input type="button" id="navigation" value="next"> or press tab</p>
   </div>
-  
+
 <% end %>
 <div class="extra-links">
   <%= render "devise/shared/links" %>

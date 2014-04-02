@@ -1,0 +1,26 @@
+<div class="large-12 columns">
+    <div class="card">
+        <%= form_tag({:controller => "quizzes", :action => "answer"}, class: "ac-custom ac-checkbox ac-checkmark") do %>
+            <h2 id="question"><%= @question.content %></h2>
+            <ul>
+           <% @question.answers.each do |answer| %>
+                <li>
+                <%= radio_button_tag(:answer, answer.id) %>
+                <%= label_tag("answer_".concat(answer.id.to_s).to_sym, answer.content) %>
+                </li>
+          <% end %>
+            </ul>
+          <div class="row">
+            <div class="small-12 large-8 columns">
+                <div class="progress success round">
+                  <span class="meter" style="width: <%= @progress %>%"></span>
+                </div>
+            </div>
+            <div class="small-12 large-2 columns">
+                <%= submit_tag("Continue", :class => "small success button") %>
+            </div>
+
+          </div>
+        <% end %>
+    </div>
+</div>

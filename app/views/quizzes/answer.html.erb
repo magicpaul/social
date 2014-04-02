@@ -1,0 +1,40 @@
+<div class="large-12 columns">
+    <div class="card">
+          <div class="ac-custom">
+            <h2 id="question"><%= @question.content %></h2>
+            <h4 class="subheader">
+              <% if @correct %>
+               Correct!
+              <% else %>
+               Incorrect.
+              <% end %>
+            </h4>
+            <ul>
+           <% @question.answers.each do |answer| %>
+                 <% if answer.correct %>
+                  <li class="result success">
+                 <% elsif answer == @answer %>
+                  <li class="result alert">
+                 <% else %>
+                  <li class="result">
+                 <% end %>
+                  <span class="result-text"><%= answer.content %></span>
+                </li>
+              <% end %>
+            </ul>
+
+
+          <%= form_tag({:controller => "quizzes", :action => "question"}) do %>
+            <div class="row">
+              <div class="small-12 large-8 columns">
+                <div class="progress success round">
+                  <span class="meter" style="width: <%= @progress %>%"></span>
+                </div>
+              </div>
+              <div class="small-12 large-2 columns">
+                <%= submit_tag("Continue", :class => "small success button") %>
+              </div>
+            </div>
+        <% end %></div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="large-12 columns">
+    <div class="card"><h1><%= @quiz.name %></h1>
+
+<ol class="questions">
+<% @quiz.questions.each do |question| %>
+  <li>
+    <%= question.content %>
+    <ol class="answers">
+      <% question.answers.each do |answer| %>
+        <li><%= answer.content %></li>
+      <% end %>
+    </ol>
+  </li>
+<% end %>
+</ol>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back to Quiz', quizzes_path %>
+</div></div>

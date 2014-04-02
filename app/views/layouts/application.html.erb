@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Fun Revision" %></title>
-
+    <link rel="icon" type="image/png" href="<%= asset_path 'favicon.png' %>" />
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -47,7 +47,7 @@
               </div>
             </li>
             <li class="iconic">
-              <%= link_to '#' do %>
+              <%= link_to quizzes_path do %>
                 <span class="fi-trophy has_tip midgreen menu-item" title="Quizzes"></span>
               <% end %>
             </li>

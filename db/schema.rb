@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140316180615) do
+ActiveRecord::Schema.define(:version => 20140402203254) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -26,12 +26,23 @@ ActiveRecord::Schema.define(:version => 20140316180615) do
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
   create_table "answers", :force => true do |t|
-    t.string   "text"
+    t.string   "content"
     t.boolean  "correct"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "badges_sashes", :force => true do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", :default => false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], :name => "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], :name => "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], :name => "index_badges_sashes_on_sash_id"
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
@@ -45,10 +56,49 @@ ActiveRecord::Schema.define(:version => 20140316180615) do
 
   add_index "documents", ["user_id"], :name => "index_documents_on_user_id"
 
+  create_table "merit_actions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors",    :default => false
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.boolean  "processed",     :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "merit_activity_logs", :force => true do |t|
+    t.integer  "action_id"
+    t.string   "related_change_type"
+    t.integer  "related_change_id"
+    t.string   "description"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_score_points", :force => true do |t|
+    t.integer  "score_id"
+    t.integer  "num_points", :default => 0
+    t.string   "log"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", :force => true do |t|
+    t.integer "sash_id"
+    t.string  "category", :default => "default"
+  end
+
   create_table "questions", :force => true do |t|
-    t.string   "text"
+    t.string   "content"
+    t.integer  "quiz_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "quizzes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "read_marks", :force => true do |t|
@@ -59,6 +109,21 @@ ActiveRecord::Schema.define(:version => 20140316180615) do
   end
 
   add_index "read_marks", ["user_id", "readable_type", "readable_id"], :name => "index_read_marks_on_user_id_and_readable_type_and_readable_id"
+
+  create_table "sashes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "statuses", :force => true do |t|
     t.text     "content"
@@ -109,6 +174,8 @@ ActiveRecord::Schema.define(:version => 20140316180615) do
     t.string   "banner_content_type"
     t.integer  "banner_file_size"
     t.datetime "banner_updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",                  :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
