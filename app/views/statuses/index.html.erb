@@ -1,13 +1,30 @@
 <div class="large-12 columns">
-	<%= link_to 'New Status', new_status_path, :class=> "secondary button" %>
+	<div class="card">
+
+		<%= simple_form_for(@status, :remote => true) do |f| %>
+			<div class="row">
+				<div class="small-12 columns input-box">
+					<%= f.input_field :content, required: true, class: "new-status-box", placeholder: "Say something..." %>
+					<small class="error">Can't be blank!</small>
+				</div>
+			</div>
+			<div class="row">
+				<div id="button-block" class="small-12 columns">
+					<%= f.button :submit, :class=>"small success button" %>
+					<%= link_to 'Cancel', '', :class=>"small secondary button", id: "cancel" %>
+				</div>
+			</div>
+		<% end %>
+
+	</div>
 </div>
 </div>
-<div class="row feed">
+<div class="row feed" id="statuses">
 <% @statuses.each do |status| %>
 	<% if can_display_status?(status) %>
-		<article class="small-12 medium-6 large-4 columns status-outer" id="status-id-<%= status.id %>">
-			<div class="bannerhint <% if signed_in? && status.user == current_user %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
-				<% if signed_in? && status.user == current_user %>
+		<article class="small-12 medium-6 large-4 columns status-outer" id="status-id-<%= status.id %>" data-equalizer-watch>
+			<div class="bannerhint <% if can_edit_status?(status) %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
+				<% if can_edit_status?(status) %>
 				       <div class="admin-box">
 				        <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
 				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>
@@ -34,11 +51,7 @@
 				</div>
 
 			    <div class="postcontent">
-					<p><%= status.content %></p>
-					<% if status.attachment? %>
-						<span class="label">Attachment</span>
-						<%= image_tag status.attachment.url %>
-					<% end %>
+					<p><%= status.content.html_safe %></p>
 				</div>
 
 			  </div>

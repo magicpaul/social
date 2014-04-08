@@ -27,11 +27,7 @@
 		</div>
 
 	    <div class="postcontent">
-			<p><%= @status.content %></p>
-			<% if @status.attachment? %>
-				<span class="label">Attachment</span>
-				<%= image_tag @status.attachment.url %>
-			<% end %>
+			<p><%= @status.content.html_safe %></p>
 		</div>
 
 	</div>

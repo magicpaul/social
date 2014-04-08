@@ -190,3 +190,7 @@ vertical-align: middle;
 .notify-block.dismiss{
   margin-left: 800px;
 }
+#errorpage span.fi-alert{
+  font-size: 200px;
+  color: #ccc;
+}

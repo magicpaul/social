@@ -231,15 +231,37 @@ background-color: #dddddd!important;
 height: 37px;
 margin: 5px auto;
 }
-.ac-custom span.fi-trophy.gold{
+.result span.fi-trophy{
+  font-size: 200px;
+}
+.gold{
   color: gold;
-  font-size: 200px;
 }
-.ac-custom span.fi-trophy.silver{
+.silver{
   color: silver;
-  font-size: 200px;
 }
-.ac-custom span.fi-trophy.bronze{
+.bronze{
   color: #A67D3D;
-  font-size: 200px;
+}
+.quizadmin{
+  display: inline-block;
+  opacity: 0;
+  padding: 0 0.3em;
+  background: #e2e2e2;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.quizblock:hover .quizadmin{
+  opacity: 1;
+}
+.quizadmin .admin{
+  font-size: 20px;
+  padding: 0 0.3em;
+  color: #666;
+  text-shadow: none;
 }

@@ -111,7 +111,9 @@ Handlebars.registerHelper('activityLink', function(){
             linktext = "friend";
             break;
     }
-    console.log(this.user_name);
+    if (this.action == "earned"){
+        linktext = "trophy";
+    }
     html = "<div id='read-activity-menu-id-"+activity.id+"' class='notify-block'><img src="+this.avatar+" alt="+this.user_name+"><a href='"+path+"' class='action'>" + this.user_name + " " + this.action + " a " + linktext + ".</a><a href='"+ readPath +"'  class='remove-activity' data-remote='true' data-method='post'>&times;</a></div>";
     return new Handlebars.SafeString( html );
 });
@@ -136,3 +138,8 @@ var pollActivity = function(){
 
 window.pollInterval = window.setInterval(pollActivity, 5000);
 pollActivity();
+
+$(document).ajaxError(function(event, request) {
+  var msg = request.getResponseHeader('X-Message');
+  if (msg) alert(msg);
+});

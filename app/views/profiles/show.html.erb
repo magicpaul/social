@@ -3,7 +3,7 @@
 		<div class="banner" style="<%= show_user_banner %>"></div>
 		<%= image_tag @user.avatar.url(:thumb),:class=> "profile-feed" %>
 		<h1><%= @user.full_name %></h1>
-		<% if signed_in? %>	
+		<% if signed_in? %>
 			<div id="friend_status">
 				<% unless @user == current_user %>
 					<% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
@@ -20,34 +20,41 @@
 	<div class="row status">
 	<% if @statuses %>
 		<% @statuses.each do |status|%>
-			
-				<div class="large-6 columns">
-				  <div class="bannerhint" style="background-image:url('<%= status.user.banner.url(:normal)%>');"></div>
-				  <div class="feed-card status">
-					<div class="banner clearfix">
-						<div class="postbox"><%=link_to image_tag(status.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(status.user) %></div>
-							
-				    	<div class="postbox"><h4><%= status.user.full_name %></h4>
-				    		<small><%= link_to time_ago_in_words(status.created_at) + " ago", status %></small></div>
-						<% if signed_in? && status.user == current_user %>
-						  <div class="meta">
-					      	<%= link_to '', edit_status_path(status) , :class=> "admin fi-wrench so-edit" %>  
-					      	<%= link_to "", status,method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete" %>
-						  </div>
-						<% end %>
+			<article class="medium-12 large-6 columns status-outer" id="status-id-<%= status.id %>">
+			<div class="bannerhint <% if signed_in? && status.user == current_user %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
+				<% if signed_in? && status.user == current_user %>
+				       <div class="admin-box">
+				        <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
+				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>
+				<% end %>
+			</div>
+			<div class="feed-card status">
+
+				<div class="banner clearfix">
+
+					<div class="postbox"><%=link_to image_tag(status.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(status.user) %></div>
+
+			    	<div class="postbox"><h4><%= status.user.full_name %></h4>
+			    		<small><%= time_ago_in_words(status.created_at) + " ago" %></small></div>
+					<div class="meta">
+						<span id="like-button-<%= status.id %>" class="likes-button">
+							<%if current_user.voted_up_on? status%>
+							    <%=  render '/statuses/unlike', :status => status %>
+							<%else%>
+							    <%= render 'statuses/like', :status => status %>
+							<%end%>
+						</span>
+						<span id="likes-count-<%= status.id %>" class="likes-count <%if current_user.voted_up_on? status%>unlike<% end %>"><%= status.likes.size %></span>
 					</div>
-					
-				    <div class="postcontent">
-						<p><%= status.content %></p>
-						<% if status.attachment? %>
-							<span class="label">Attachment</span>
-							<%= image_tag status.attachment.url %>
-						<% end %>
-					</div>
-				    
-				  </div>
 				</div>
-			
+
+			    <div class="postcontent">
+					<p><%= status.content.html_safe %></p>
+				</div>
+
+			  </div>
+			</article>
+
 		<% end %>
 	<% else %>
 		<h2>Nothing here</h2>

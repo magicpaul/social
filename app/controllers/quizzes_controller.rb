@@ -37,7 +37,7 @@ class QuizzesController < ApplicationController
   def destroy
     @quiz = Quiz.find(params[:id])
     @quiz.destroy
-    redirect_to surveys_url, notice: "Successfully destroyed quiz."
+    redirect_to quizzes_url, notice: "Successfully destroyed quiz."
   end
 
   def start
@@ -49,7 +49,7 @@ class QuizzesController < ApplicationController
    session[:total]   = total
    session[:current] = 0
    session[:correct] = 0
-
+   session[:score]   = 0
    redirect_to :action => "question"
   end
 
@@ -90,9 +90,20 @@ class QuizzesController < ApplicationController
   end
 
   def end
-   @correct = session[:correct]
-   @total   = session[:total]
-
-   @score = @correct * 100 / @total
+    @quiz = Quiz.find(params[:id])
+    @correct = session[:correct]
+    @total   = session[:total]
+    @score = @correct * 100 / @total
+    session[:score] = @score
+  end
+  def share
+    @quiz = Quiz.find(params[:id])
+    @score = session[:score]
+    @badge = view_context.get_badge(@score)
+    @url = start_quiz_path(@quiz)
+    @content = "<span class='fi-trophy #{@badge} left'></span>I got #{@score}% in #{@quiz.name}!<br><br><a href='#{@url}'>Can you beat my score?</a>"
+    @trophy = current_user.trophies.create(content: @content.html_safe)
+    current_user.create_activity(@trophy, 'earned')
+    redirect_to quizzes_url, notice: "Result shared."
   end
 end

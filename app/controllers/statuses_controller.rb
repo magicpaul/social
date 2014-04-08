@@ -4,6 +4,7 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
   def index
+    @status = Status.new
     @statuses = Status.all(:order => 'updated_at DESC')
 
     respond_to do |format|
@@ -48,9 +49,12 @@ class StatusesController < ApplicationController
         current_user.create_activity(@status, 'created')
         format.html { redirect_to statuses_url, notice: 'Status was successfully created.' }
         format.json { render json: @status, status: :created, location: @status }
+        format.js
       else
+        flash.now[:notice] = "Houston, we have a problem."
         format.html { render action: "new" }
         format.json { render json: @status.errors, status: :unprocessable_entity }
+        format.js   { render "form_errors.js.erb" }
       end
     end
   end

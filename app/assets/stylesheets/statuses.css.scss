@@ -137,10 +137,6 @@ a.unlike{
   position: relative;
 }
 .status-outer .admin-box{
-    opacity:0;
-  -webkit-transition:0.3s;
-    -moz-transition:0.3s;
-         transition:0.3s;
   position: absolute;
   top:5px;
   right: 5px;
@@ -163,10 +159,10 @@ a.unlike{
   border-radius:3px;
   border-top-left-radius:0px;
   border-top-right-radius:0px;
+  min-height: 194px;
 }
 .feed-card .banner{border-bottom: 1px solid #eee;}
 .feed-card .profile-feed{
-
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -181,7 +177,11 @@ a.unlike{
   padding:10px 0;
 }
 
-
+.postcontent span.fi-trophy{
+  font-size: 100px;
+  line-height: 1;
+  margin-right: 10px;
+}
 .bannerhint{
   height: 25px;
   position: absolute;
@@ -197,7 +197,7 @@ a.unlike{
 }
 .status-outer{
   position: relative;
-
+  margin-top: 10px;
 }
 .status-outer:hover .bannerhint.peek{
   top: -25px;
@@ -209,6 +209,25 @@ a.unlike{
   width: 96px;
   height: auto;
   padding-bottom: 10px;
+}
+.status-outer.new{
+  display: none;
+}
+.new-status-box{
+  -webkit-transition:height 0.5s ease;
+  transition: height 0.5s ease;
+  height: 35px;
+}
+.new-status-box.open{
+  height: 100px
+}
+small.error{
+  display: none;
+  padding: 0.33333rem 0.5rem 0.5rem;
+  margin-top: -1px;
+  margin-bottom: 0.88889rem;
+  font-size: 0.66667rem;
+  font-weight: normal;
 }
 @media only screen and (min-width: 40.063em){
   .row.feed [class*="column"] + [class*="column"]:last-child, .row.status [class*="column"] + [class*="column"]:last-child {
