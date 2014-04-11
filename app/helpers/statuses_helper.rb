@@ -5,4 +5,11 @@ module StatusesHelper
     def can_edit_status?(status)
         signed_in? && current_user.admin? || signed_in? && status.user == current_user
     end
+    def readable_points
+        if current_user.points == 0
+            "You don't have any points yet."
+        else
+            "You have #{current_user.points} points."
+        end
+    end
 end

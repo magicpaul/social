@@ -31,6 +31,7 @@ group :assets do
 end
 group :production do
   gem 'rails_12factor'
+  gem 'thin'
 end
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.1.1.0'
@@ -46,8 +47,6 @@ gem 'acts_as_votable'
 gem 'will_paginate-foundation'
 gem 'unread'
 gem 'merit'
-# gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

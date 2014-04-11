@@ -94,6 +94,7 @@ var renderNoActivities = function(){
     $activityFeedLink.html(html);
     renderNoCount();
 }
+
 Handlebars.registerHelper('activityFeedLink', function(){
     return new Handlebars.SafeString( Routes.activities_path() );
 });

@@ -5,7 +5,10 @@
             <span class="fi-trophy <%= get_badge(@score) %>"></span>
             <p id="score">Your score: <%= @score %>%</p>
             <p id="question">You answered <%= @correct %> out of <%= @total %> questions correctly and got a <%= get_badge(@score) %> trophy!</p>
-          <%= link_to "Share result", share_quiz_path(@quiz), :class => "success button", :method=> :post %>
+            <p>You got <%= @points %> points!</p>
+          <%= link_to share_quiz_path(@quiz), :class => "success button", :method=> :post do%>
+            <i class='fi-share'></i>  Share result
+          <% end %>
           <%= link_to "Take another quiz", quizzes_path, :class => "secondary button" %>
         </div>
     </div>

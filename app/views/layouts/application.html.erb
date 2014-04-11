@@ -18,51 +18,53 @@
         <section class="title medium-4 columns">
             <h1><%= link_to image_tag(asset_path 'logo.png'), feed_path %></h1>
         </section>
-        <section class="menu-section medium-8 columns">
-          <ul class="right">
-            <% if user_signed_in? %>
+        <section class="medium-8 columns">
+          <div class="menu-section">
+            <ul>
+              <% if user_signed_in? %>
 
-            <li>
-              <a data-dropdown="drop1" class="dropdown profile-bar" title="<%= current_user.full_name %>">
-                <%= image_tag current_user.avatar.url(:thumb),:class=> "profile-feed menu"%>
-              </a>
-              <ul id="drop1" data-dropdown-content class="f-dropdown">
-                <li><h4><%= current_user.full_name %></h4></li>
-                <li><%= link_to "Activity Feed", activities_path %></li>
-                <li><%= link_to "View Profile", profile_path(current_user) %></li>
-                <li><%= link_to "Edit Details", edit_user_registration_path %></li>
-                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-            <li class="iconic"  id="activity-feed">
-              <a href="#" data-dropdown="drop2">
-                <span class="fi-sound lightgreen menu-item" title="Notifications"></span>
-                <div id="count"></div>
-              </a>
-              <div id="drop2" data-dropdown-content class="f-dropdown content">
-                <div id="subtle-notif">
-                  <i class="fi-sound"></i>
-                  <p>Nothing here!</p>
+              <li>
+                <a data-dropdown="drop1" class="dropdown profile-bar" title="<%= current_user.full_name %>">
+                  <%= image_tag current_user.avatar.url(:thumb),:class=> "profile-feed menu"%>
+                </a>
+                <ul id="drop1" data-dropdown-content class="f-dropdown">
+                  <li><h4><%= current_user.full_name %></h4></li>
+                  <li><%= link_to "Activity Feed", activities_path %></li>
+                  <li><%= link_to "View Profile", profile_path(current_user) %></li>
+                  <li><%= link_to "Edit Details", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              <li class="iconic"  id="activity-feed">
+                <a href="#" data-dropdown="drop2">
+                  <span class="fi-sound lightgreen menu-item" title="Notifications"></span>
+                  <div id="count"></div>
+                </a>
+                <div id="drop2" data-dropdown-content class="f-dropdown content">
+                  <div id="subtle-notif">
+                    <i class="fi-sound"></i>
+                    <p>Nothing here!</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="iconic">
-              <%= link_to quizzes_path do %>
-                <span class="fi-trophy has_tip midgreen menu-item" title="Quizzes"></span>
-              <% end %>
-            </li>
-            <li class="iconic">
-              <%= link_to user_friendships_path do %>
-                <span class="fi-torsos-all has_tip darkgreen menu-item" title="Friends"></span>
-              <% end %>
-            </li>
+              </li>
+              <li class="iconic">
+                <%= link_to quizzes_path do %>
+                  <span class="fi-trophy has_tip midgreen menu-item" title="Quizzes"></span>
+                <% end %>
+              </li>
+              <li class="iconic">
+                <%= link_to user_friendships_path do %>
+                  <span class="fi-torsos-all has_tip darkgreen menu-item" title="Friends"></span>
+                <% end %>
+              </li>
 
 
-            <% else %>
-            <li><%= link_to "Register", register_path, class: "button success" %></li>
-            <li><%= link_to "Sign In", sign_in_path %></li>
-            <% end %>
-          </ul>
+              <% else %>
+              <li><%= link_to "Register", register_path, class: "button success" %></li>
+              <li><%= link_to "Sign In", sign_in_path %></li>
+              <% end %>
+            </ul>
+          </div>
         </section>
       </nav>
     </div> <% end %>

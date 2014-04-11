@@ -1,0 +1,37 @@
+<% if can_display_status?(status) %>
+    <article class="small-12 medium-6 large-4 columns status-outer" id="status-id-<%= status.id %>" data-equalizer-watch>
+        <div class="bannerhint <% if can_edit_status?(status) %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
+        <% if can_edit_status?(status) %>
+               <div class="admin-box">
+                <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
+                <%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>
+        <% end %>
+        </div>
+        <div class="feed-card status">
+
+            <div class="banner clearfix">
+
+                <div class="postbox">
+                    <%=link_to image_tag(status.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(status.user) %>
+                </div>
+                <div class="postbox">
+                    <h4><%= status.user.full_name %></h4>
+                    <small><%= time_ago_in_words(status.created_at) + " ago" %></small>
+                </div>
+                <div class="meta">
+                    <span id="like-button-<%= status.id %>" class="likes-button">
+                        <%if current_user.voted_up_on? status%>
+                            <%=  render 'unlike', :status => status %>
+                        <%else%>
+                            <%= render 'like', :status => status %>
+                        <%end%>
+                    </span>
+                    <span id="likes-count-<%= status.id %>" class="likes-count <%if current_user.voted_up_on? status%>unlike<% end %>"><%= status.likes.size %></span>
+                </div>
+            </div>
+            <div class="postcontent">
+                <p><%= status.content.html_safe %></p>
+            </div>
+        </div>
+    </article>
+<% end %>

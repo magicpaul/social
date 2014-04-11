@@ -3,6 +3,7 @@
 		<div class="banner" style="<%= show_user_banner %>"></div>
 		<%= image_tag @user.avatar.url(:thumb),:class=> "profile-feed" %>
 		<h1><%= @user.full_name %></h1>
+		<h3 class="subheader"><%= @user.points %> points</h3>
 		<% if signed_in? %>
 			<div id="friend_status">
 				<% unless @user == current_user %>
@@ -15,6 +16,33 @@
 			</div>
 		<% end %>
 	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="card clearfix">
+				<h2><%= @user.first_name %>'s Friends</h2>
+				<% @user_friendships.each do |friendship| %>
+					<% friend = friendship.friend %>
+					<% if friendship.state?(:accepted) %>
+						<div class="small-6 columns">
+
+							<div class="profile-friends">
+								<%= link_to profile_path(friend) do %>
+									<div class="img">
+										<%= image_tag(friend.avatar.url(:thumb)) %>
+									</div>
+									<div class="info">
+							          <h3><%= friend.full_name %></h3>
+							        </div>
+							    <% end %>
+							</div>
+
+						</div>
+					<% end %>
+
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="medium-6 large-8 columns">
 	<div class="row status">
@@ -22,7 +50,7 @@
 		<% @statuses.each do |status|%>
 			<article class="medium-12 large-6 columns status-outer" id="status-id-<%= status.id %>">
 			<div class="bannerhint <% if signed_in? && status.user == current_user %>peek<% end %>" style="background-image:url('<%= status.user.banner.url(:normal)%>');">
-				<% if signed_in? && status.user == current_user %>
+				<% if can_edit_status?(status) %>
 				       <div class="admin-box">
 				        <%= link_to '', edit_status_path(status), :class=> "admin fi-wrench so-edit" %>
 				      	<%= link_to '', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>

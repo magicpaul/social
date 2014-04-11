@@ -88,21 +88,33 @@ class QuizzesController < ApplicationController
 
    session[:current] += 1
   end
-
+  def get_points(score)
+    case
+        when score > 75
+            return 30
+        when score > 50
+            return 20
+        else
+            return 10
+    end
+  end
   def end
     @quiz = Quiz.find(params[:id])
     @correct = session[:correct]
     @total   = session[:total]
     @score = @correct * 100 / @total
+    @points = get_points(@score)
+    current_user.add_points(@points, category: 'Quizzes')
     session[:score] = @score
   end
+
   def share
     @quiz = Quiz.find(params[:id])
     @score = session[:score]
     @badge = view_context.get_badge(@score)
     @url = start_quiz_path(@quiz)
-    @content = "<span class='fi-trophy #{@badge} left'></span>I got #{@score}% in #{@quiz.name}!<br><br><a href='#{@url}'>Can you beat my score?</a>"
-    @trophy = current_user.trophies.create(content: @content.html_safe)
+    @content = "<span class='fi-trophy #{@badge} left'></span>I got #{@score}% in #{@quiz.name}!<br><br><a href='#{@url}' data-method='post'>Can you beat my score?</a>"
+    @trophy = current_user.statuses.create(content: @content.html_safe)
     current_user.create_activity(@trophy, 'earned')
     redirect_to quizzes_url, notice: "Result shared."
   end

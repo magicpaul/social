@@ -265,3 +265,23 @@ margin: 5px auto;
   color: #666;
   text-shadow: none;
 }
+@media only screen and (max-width: 40.063em) {
+  .ac-custom{
+    padding: 0;
+  }
+  .ac-custom h2 {
+    font-size: 1.6875rem;
+  }
+  .ac-custom label {
+    font-size: 1.25rem;
+  }
+  .progress{
+    height: 1.5625rem;
+  }
+  .ac-custom li.result span.result-text {
+    font-size: 1.25em;
+  }
+  .result span.fi-trophy{
+    font-size: 160px;
+  }
+}

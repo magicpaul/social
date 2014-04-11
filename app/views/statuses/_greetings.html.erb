@@ -1,0 +1,3 @@
+<h1>Hi <%= current_user.first_name %>!</h1>
+<h2 class="subheader" id="points"><%= render partial: "points" %></h2>
+<p class="lead">You can get more points by taking <%= link_to "quizzes", quizzes_path %> or being <%= link_to "social", user_friendships_path %>.</p>

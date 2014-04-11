@@ -5,11 +5,11 @@ class StatusesController < ApplicationController
   # GET /statuses.json
   def index
     @status = Status.new
-    @statuses = Status.all(:order => 'updated_at DESC')
-
+    @statuses = Status.paginate(:per_page => 9, :page => params[:page]).order('updated_at DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @statuses }
+      format.js
     end
   end
 
@@ -47,6 +47,7 @@ class StatusesController < ApplicationController
     respond_to do |format|
       if @status.save
         current_user.create_activity(@status, 'created')
+        current_user.add_points(5, category: 'Social')
         format.html { redirect_to statuses_url, notice: 'Status was successfully created.' }
         format.json { render json: @status, status: :created, location: @status }
         format.js
@@ -90,10 +91,15 @@ class StatusesController < ApplicationController
       format.js
     end
   end
+
   def like
     @status = Status.find(params[:id])
     current_user.upvotes @status
     current_user.create_activity(@status, 'liked')
+    current_user.add_points(2, category: 'Social')
+    if current_user != @status.user
+      @status.user.add_points(2, category: 'Social')
+    end
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js
@@ -103,6 +109,10 @@ class StatusesController < ApplicationController
   def unlike
     @status = Status.find(params[:id])
     current_user.downvotes @status
+    current_user.subtract_points(2, category: 'Social')
+    if current_user != @status.user
+      @status.user.subtract_points(2, category: 'Social')
+    end
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js

@@ -41,6 +41,11 @@ body{
 .contain-to-grid a:hover{
   color: #333;
 }
+.menu-section{
+  float: right;
+  width: 288px;
+  margin: 0 auto;
+}
 .menu-section >ul{
   margin: 0;
 }
@@ -162,7 +167,7 @@ li.divider{
   border-radius: 3px;
   cursor: pointer;
   height: 80px;
-  width: 360px;
+  width: 100%;
   background-color: #f4f4f4!important;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
   box-shadow: 0 1px 2px rgba(0,0,0,.2);
@@ -177,15 +182,17 @@ li.divider{
 width: 80px;
 height: 80px;
 margin-right: 20px;
-display: inline-block;
+display: inline;
 vertical-align: middle;
+position: absolute;
 }
 .notify-block a.action{
   height: 80px;
-  width: 240px;
+  /* width: 140px; */
   display: inline-block;
   text-overflow: ellipsis;
   margin-top: 24px;
+  margin-left: 100px;
 }
 .notify-block.dismiss{
   margin-left: 800px;
@@ -193,4 +200,25 @@ vertical-align: middle;
 #errorpage span.fi-alert{
   font-size: 200px;
   color: #ccc;
+}
+.boxie{
+  background: rgba(255, 255, 255, 0.9) url('boxie_bg.png') no-repeat right bottom!important;
+}
+
+@media only screen and (max-width: 40.063em) {
+  .boxie  {
+    background-image: none!important;
+  }
+  #drop2{
+    max-width: 100%!important;
+  }
+  #drop2.open{
+    left: 0px!important;
+  }
+  #drop2.f-dropdown:before,#drop2.f-dropdown:after{
+    left:36%!important;
+  }
+  .menu-section{
+    float: none;
+  }
 }

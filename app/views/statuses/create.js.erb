@@ -3,3 +3,4 @@ $(".new-status-box").removeClass('open').val('');
 $('.input-box').removeClass('error');
 $('#statuses').prepend("<%= escape_javascript(render 'create', :status => @status) %>");
 $(".status-outer.new").fadeIn().removeClass('new');
+$('#points').html('<%= j render partial: "points" %>');

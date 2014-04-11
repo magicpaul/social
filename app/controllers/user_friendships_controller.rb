@@ -10,6 +10,7 @@ class UserFriendshipsController < ApplicationController
 		@user_friendship = current_user.user_friendships.find(params[:id])
 		if @user_friendship.accept!
 			current_user.create_activity @user_friendship, 'accepted'
+			current_user.add_points(10, category: 'Social')
 			flash[:success] = "You are now friends with #{@user_friendship.friend.first_name}"
 		else
 			flash[:error] = "Bummer. Something went wrong."

@@ -12,3 +12,6 @@ jQuery ->
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
+  $("input[name='answer']").click ->
+    $(".button").removeClass "disabled"  if $(this).is(":checked")
+    return
