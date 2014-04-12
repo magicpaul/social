@@ -1,6 +1,6 @@
 <article class="small-12 medium-8 large-6 small-centered columns status-outer" id="status-id-<%= @status.id %>" style="margin-top:20px;">
 	<div class="bannerhint <% if signed_in? && @status.user == current_user %>peek<% end %>" style="background-image:url('<%= @status.user.banner.url(:normal)%>');">
-		<% if can_edit_status?(status) %>
+		<% if can_edit_status?(@status) %>
 		       <div class="admin-box">
 		        <%= link_to '', edit_status_path(@status), :class=> "admin fi-wrench so-edit" %>
 		      	<%= link_to '', @status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete", :remote=>true %></div>

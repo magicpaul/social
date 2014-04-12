@@ -28,18 +28,18 @@ class UserFriendshipDecorator < Draper::Decorator
     end
   end
 
-  def update_button_class
+  def button_class
     case model.state
     when nil
-      ''
+      'secondary'
     when 'pending'
-      ''
+      'secondary'
     when 'requested'
-       ''
+      'success'
     when 'accepted'
-      ''
+      'secondary'
     when 'blocked'
-     ''
+     'alert'
     end
   end
 end

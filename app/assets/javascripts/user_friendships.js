@@ -1,13 +1,4 @@
-window.userFriendships = [];
 $(document).ready(function(){
-	$.ajax({
-	    url: Routes.user_friendships_path({format: 'json'}),
-	    dataType: 'json',
-	    type: 'GET',
-	    success: function(data) {
-	      window.userFriendships = data;
-	    }
-	});
 	$('#add_friendship').click(function(event){
 		event.preventDefault();
 		var addFriendshipButton = $(this);
@@ -23,6 +14,6 @@ $(document).ready(function(){
 				$('#friend_status').html("<a href='#' class='tiny success round disabled button'>Friendship Requested</a>");
 			}
 		});
-		
+
 	});
 });

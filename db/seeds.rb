@@ -13,7 +13,8 @@ User.create({
   profile_name: "magicpaul",
   email: "itspaulgrant@gmail.com",
   password: DEFAULT_INSECURE_PASSWORD,
-  password_confirmation: DEFAULT_INSECURE_PASSWORD
+  password_confirmation: DEFAULT_INSECURE_PASSWORD,
+  admin: true
 })
 
 User.create({

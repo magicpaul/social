@@ -11,16 +11,16 @@
 <% @user_friendships.each do |friendship| %>
 	<% friend = friendship.friend %>
 	<div id="<%= dom_id(friendship) %>" class="friend row">
-		<div class="large-2 columns small-4 small-centered large-uncentered"><%=link_to image_tag(friend.avatar.url(:thumb),:class=> "profile-feed"),profile_path(friend) %>
+		<div class="medium-2 columns small-6"><%=link_to image_tag(friend.avatar.url(:thumb),:class=> "profile-feed"),profile_path(friend) %>
 		</div>
-	
-		<div class="large-6 small-4 columns friend-deets">
-			<h4><%= friend.full_name %></h4>
-			<em>Friendship is <%= friendship.state %></em>.
+
+		<div class="large-6 small-6 columns friend-deets">
+			<h3><%= friend.full_name %></h3>
+			<h4 class="subheader">Friendship is <%= friendship.state %></h4>.
 		</div>
-		<div class="large-2 small-4 columns"><%= link_to "#{friendship.update_action_verbiage}", edit_user_friendship_path(friendship.friend.profile_name), class: "tiny button" %>
+		<div class="medium-2 small-12 columns"><%= link_to "#{friendship.update_action_verbiage}", edit_user_friendship_path(friendship.friend.profile_name), class: "expand button #{friendship.button_class}" %>
 		</div>
 	</div>
-	<% end %>
+<% end %>
 	</div>
 </div>

@@ -4,18 +4,18 @@
         <% @activities.each do |activity| %>
             <hr>
             <div class="friend row">
-                <div class="large-2 columns small-2">
+                <div class="medium-2 columns small-6">
                     <%=link_to image_tag(activity.user.avatar.url(:thumb),:class=> "profile-feed"),profile_path(activity.user) %>
                 </div>
-                <div class="large-8 small-8 columns">
-                    <h4 class="nomarg"><%= activity.user.full_name %></h4>
-                    <small><%= time_ago_in_words(activity.updated_at) + " ago" %></small>
+                <div class="medium-8 small-6 columns">
+                    <h3 class="nomarg"><%= activity.user.full_name %></h3>
+                    <h4><small><%= time_ago_in_words(activity.updated_at) + " ago" %></small></h4>
                     <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}",
                                locals: { activity: activity } %>
                 </div>
-                <div class="small-2 columns">
+                <div class="small-12 medium-2 columns">
                     <% if current_user.has_unread?(activity) %>
-                        <%= link_to 'Read', read_activity_path(activity), method: :post, :class => "button", :id => "read-activity-id-#{activity.id}" %>
+                        <%= link_to 'Read', read_activity_path(activity), method: :post, :class => "expand button", :id => "read-activity-id-#{activity.id}" %>
                     <% end %>
                 </div>
 
