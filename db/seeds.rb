@@ -48,7 +48,7 @@ User.create({
   first_name: "Sam",
   last_name: "Morris",
   profile_name: "SamMorris",
-  email: "jooodif@funrevision.com",
+  email: "sammorris@funrevision.com",
   password: DEFAULT_INSECURE_PASSWORD,
   password_confirmation: DEFAULT_INSECURE_PASSWORD
 })
@@ -62,12 +62,12 @@ User.create({
   password_confirmation: DEFAULT_INSECURE_PASSWORD
 })
 
-u1  = User.find_by_email('itspaulgrant@gmail.com')
-u2 = User.find_by_email('lcj02@stran.ac.uk')
-u3  = User.find_by_email('rach.s.g@hotmail.com')
-u4 = User.find_by_email('jonny.goudy@hotmail.com')
-u5  = User.find_by_email('jooodif@yahoo.com')
-u6  = User.find_by_email('gregoryalexanderfox@gmail.com')
+u1 = User.find_by_email('paulgrant@funrevision.com')
+u2 = User.find_by_email('danielleporter@funrevision.com')
+u3 = User.find_by_email('christopherjones@funrevision.com')
+u4 = User.find_by_email('rebeccabailey@funrevision.com')
+u5 = User.find_by_email('sammorris@funrevision.com')
+u6 = User.find_by_email('pulgoyrovnitov@funrevision.com')
 
 u1.statuses.create(content: "Hello, world!")
 u2.statuses.create(content: "Hi, I'm Danielle")
