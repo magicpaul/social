@@ -61,6 +61,6 @@ module Social
 
     config.assets.precompile = %w( *.js *.css )
 
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
   end
 end
