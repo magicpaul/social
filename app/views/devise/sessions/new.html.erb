@@ -1,20 +1,21 @@
 <div class="small-12 medium-6 large-4 columns small-centered text-center login-stuff" style="margin-top:50px;">
 <%= image_tag(asset_path 'logo-white.png') %>
 <h2>Sign in</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "profile-card text-center radius", id:"form", autocomplete: "off"} ) do |f| %>
+
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "profile-card text-center radius", id:"form"} ) do |f| %>
 
   <div class="banner" style="background-image:url(<%= asset_path 'banner.jpg' %>)"></div>
   <%= image_tag 'avatar.png',:class=> "profile-feed" %>
   <div class="form-inputs">
-    <div class="pm-step"><p>What's your email?</p><%= f.input :email, :required => false, :autofocus => true  %></div>
-    <div class="pm-step"><p>And your password?</p><%= f.input :password, :required => false %></div>
-    <!--<div class="pm-step"><%= f.button :submit, "Sign in" %></div>-->
-  </div>
-  <div class="message-submit" style="display: none;">
-      <h3>Logging you in!</h3>
-  </div>
-  <div id="description">
-    <p class="muted"><input type="button" id="navigation" value="next"> or press tab</p>
+    <div id="output"></div>
+    <%= f.error_notification %>
+    <% flash.each do | type, message | %>
+      <%= render :partial => 'layouts/flash' , :locals => { :flash => flash , :type => type} %>
+    <% end %>
+    <%= f.input_field :email, :required => true, placeholder: "What's your email?" %>
+    <%= f.input_field :password, :required => true, placeholder: "And yourpassword?" %>
+    <%= f.button :submit, "Sign in", class: "extend round success button login" %>
   </div>
 
 <% end %>

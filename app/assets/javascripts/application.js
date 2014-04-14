@@ -136,9 +136,14 @@ var pollActivity = function(){
         }
     });
 }
+$('document').ready(function() {
+  if($('nav.menu').length){
+    console.log("element exists");
+    window.pollInterval = window.setInterval(pollActivity, 5000);
+    pollActivity();
+  }
+});
 
-window.pollInterval = window.setInterval(pollActivity, 5000);
-pollActivity();
 
 $(document).ajaxError(function(event, request) {
   var msg = request.getResponseHeader('X-Message');

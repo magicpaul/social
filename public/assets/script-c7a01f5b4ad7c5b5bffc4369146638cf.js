@@ -1,1 +1,0 @@
-Foundation.set_namespace=function(){},$(function(){$("#form").promin({events:{submit:function(n){var o=!1;return n.each(function(n,t){var i=$(t),a=i.val(),r=a.length;return o=0===r,o?($("#form").promin("show",n),i.addClass("error"),!1):void 0}),!o}}}),$(document).foundation(),$("[data-upload]").click(function(){$("#upfile").click()})});

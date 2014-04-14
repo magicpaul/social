@@ -67,15 +67,15 @@
           </div>
         </section>
       </nav>
-    </div> <% end %>
+    </div>
     <div class="row">
+
       <div class="large-12 columns" id="notice">
         <% flash.each do | type, message | %>
           <%= render :partial => 'layouts/flash' , :locals => { :flash => flash , :type => type} %>
         <% end %>
       </div>
-
-
+    <% end %>
   </div>
   <div class="row">
     <%= yield %>
