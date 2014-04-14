@@ -1,6 +1,12 @@
 <div class="large-12 columns">
     <div class="card">
-        <h1>Activities</h1>
+        <div class="friend row">
+            <div class="medium-8 columns small-6">
+                <h1>Activities</h1>
+            </div>
+            <div class="small-12 medium-2 columns"><%= link_to 'Mark all read', all_read_activity_path(1), method: :post, :class => "expand alert button" %>
+            </div>
+        </div>
         <% @activities.each do |activity| %>
             <hr>
             <div class="friend row">
@@ -15,7 +21,7 @@
                 </div>
                 <div class="small-12 medium-2 columns">
                     <% if current_user.has_unread?(activity) %>
-                        <%= link_to 'Read', read_activity_path(activity), method: :post, :class => "expand button", :id => "read-activity-id-#{activity.id}" %>
+                        <%= link_to 'Read', read_activity_path(activity), method: :post, :class => "expand button", :id => "read-activity-id-#{activity.id}", remote: "true" %>
                     <% end %>
                 </div>
 

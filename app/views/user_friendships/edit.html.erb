@@ -18,26 +18,26 @@
 		</div>
 	</div>
 	<div class="large-4 columns ">
-		<div class="panel">
+		<div class="card">
 			<h3><%= @user_friendship.sub_message %></h3>
 			<hr>
 			<% if @user_friendship.requested? %>
 				<%= simple_form_for @user_friendship, url: accept_user_friendship_path(@user_friendship),method: :put do |form| %>
-					<%= submit_tag "Accept", class: 'success button' %>
+					<%= submit_tag "Accept", class: 'success expand button' %>
 				<% end %>
 			<% end %>
 			<%= simple_form_for @user_friendship, url: block_user_friendship_path(@user_friendship),method: :put do |form| %>
-					<%= submit_tag "Block", class: 'button' %>
+					<%= submit_tag "Block", class: 'expand button' %>
 			<% end %>
 			<%= simple_form_for @user_friendship, url: user_friendship_path(@user_friendship), method: :delete do |form| %>
-				<%= submit_tag "Delete", class: 'alert button' %>
+				<%= submit_tag "Delete", class: 'alert expand button' %>
 			<% end %>
 		</div>
 	</div>
 </div>
 <div class="row">
 	<div class="large-12 columns">
-		
-		
+
+
 	</div>
 </div>

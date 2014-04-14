@@ -31,7 +31,6 @@ group :assets do
 end
 group :production do
   gem 'rails_12factor'
-  gem 'thin'
 end
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.1.1.0'

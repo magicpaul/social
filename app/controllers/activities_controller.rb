@@ -23,8 +23,7 @@ class ActivitiesController < ApplicationController
     end
   end
   def all_read
-    @activity = Activity.find(params[:id])
-    @activity.mark_read(current_user)
+    @activity = Activity.mark_as_read! :all, :for => current_user
     redirect_to activities_path
   end
 end
