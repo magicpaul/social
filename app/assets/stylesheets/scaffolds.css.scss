@@ -5,6 +5,10 @@ body{
 html, body {
     min-height: 100%;
 }
+.button:focus {
+  outline: none;
+}
+
 .login-stuff h1, .login-stuff h2{
     color: white;
 }
@@ -13,30 +17,14 @@ html, body {
     width: 100%;
     padding: 10px;
     text-align: center;
-    height:40px;
-    border: 1px solid #ccc;;
-    background: #fafafa;
     transition:0.2s ease-in-out;
 
 }
 
-#form .form-inputs input:focus{
-    outline: 0;
-    background: #eee;
-}
 
-#form .form-inputs input[type="text"]{
-    border-radius: 5px 5px 0 0;
-}
-
-#form .form-inputs input[type="password"]{
-    border-radius: 0 0 5px 5px;
-    border-top: 0;
-}
 
 #form .form-inputs button.login{
     margin-top:15px;
-    padding: 10px 20px;
 }
 
 .animated {

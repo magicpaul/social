@@ -4,10 +4,6 @@
 		{
 			"follow_symlinks": true,
 			"path": "."
-		},
-		{
-			"follow_symlinks": true,
-			"path": "C:\\Sites\\jquery.pageless.demo-master\\example.rails3"
 		}
 	]
 }

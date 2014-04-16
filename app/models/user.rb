@@ -8,10 +8,18 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :profile_name, :avatar, :banner, :admin
-  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "96x96#" }, :default_url => "avatar_:style.png"
+  has_attached_file :avatar,
+                    :styles => { :medium => "300x300#", :thumb => "96x96#" },
+                    :default_url => "avatar_:style.png",
+                    :storage => :dropbox,
+                    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :banner, :styles => { :normal => "595x200#" }, :default_url => "/assets/banner_:style.jpg"
+  has_attached_file :banner,
+                    :styles => { :normal => "595x200#" },
+                    :default_url => "/assets/banner_:style.jpg",
+                    :storage => :dropbox,
+                    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   validates_attachment_content_type :banner, :content_type => /\Aimage\/.*\Z/
 
   validates :first_name, presence: true
