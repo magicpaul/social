@@ -42,10 +42,9 @@ class QuizzesController < ApplicationController
 
   def start
    @quiz = Quiz.find(params[:id])
-   total = @quiz.questions.size
+   total = 10
    all = @quiz.questions.find(:all).map {|x| x.id}
    session[:questions] = all.sort_by{rand}[0..(total-1)]
-
    session[:total]   = total
    session[:current] = 0
    session[:correct] = 0

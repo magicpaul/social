@@ -17,6 +17,11 @@ $(function(){
             "margin":"0",
             "opacity":"0"
             });
+            $(".profile-card").css({
+                "padding-bottom":"0",
+                "min-height" : "0"
+            });
+            $
             $('[data-alert]').hide();
             $('#form').submit();
         } else {
