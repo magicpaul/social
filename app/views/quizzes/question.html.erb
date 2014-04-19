@@ -2,10 +2,13 @@
     <div class="card">
         <%= form_tag({:controller => "quizzes", :action => "answer"}, class: "ac-custom ac-checkbox ac-checkmark") do %>
             <h2 id="question"><%= @question.content %></h2>
+            <% if @question.attachment? %>
+              <%= image_tag @question.attachment.url %>
+            <% end %>
             <ul>
            <% @question.answers.each do |answer| %>
                 <li>
-                <%= radio_button_tag(:answer, answer.id, class:"check_this") %>
+                <%= radio_button_tag(:answer, answer.id, checked = false, class:"check_this") %>
                 <%= label_tag("answer_".concat(answer.id.to_s).to_sym, answer.content) %>
                 </li>
           <% end %>

@@ -42,7 +42,10 @@ class QuizzesController < ApplicationController
 
   def start
    @quiz = Quiz.find(params[:id])
-   total = 10
+   total = @quiz.questions.length
+   if total > 10
+     total = 10
+   end
    all = @quiz.questions.find(:all).map {|x| x.id}
    session[:questions] = all.sort_by{rand}[0..(total-1)]
    session[:total]   = total
@@ -103,6 +106,8 @@ class QuizzesController < ApplicationController
     @total   = session[:total]
     @score = @correct * 100 / @total
     @points = get_points(@score)
+    @user = current_user
+    @quizresult = QuizResult.create(user_id: @user.id, quiz_id: @quiz.id, score: @score)
     current_user.add_points(@points, category: 'Quizzes')
     session[:score] = @score
   end

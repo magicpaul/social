@@ -10,7 +10,7 @@ $(function(){
         //little validation just to check username
         if (textfield.val() != "") {
             $("#output").removeClass('alert-box alert');
-            $("#output").addClass("alert-box success animated fadeInUp").html("Signing you in...");
+            $("#output").addClass("alert-box success animated fadeInUp").html("<div class='loaderbox'><div class='loader'></div></div><span style='display:inline-block;margin-left: 2.5rem;'>Signing you in...</span>");
             $("input").css({
             "height":"0",
             "padding":"0",

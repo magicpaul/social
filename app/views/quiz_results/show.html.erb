@@ -1,0 +1,22 @@
+<div class="large-12 columns">
+    <div class="card">
+        <h1><%= @quiz.name %> - User Scores</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @quiz_results.each do |result| %>
+              <tr>
+                  <td><%= result.user.full_name %></td>
+                  <td><%= result.score %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to "Back", quizzes_path, class: "small button" %>
+    </div>
+</div>

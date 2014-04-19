@@ -2,7 +2,7 @@
     <div class="card"><h1>Quizzes</h1>
         <% @quizzes.each do |quiz| %>
           <div class="article quizblock row">
-                <div class="small-6 large-10 columns">
+                <div class="small-12 medium-9 columns">
                     <h3><%= quiz.name %>
                     <% if current_user.admin? %>
                     <div class="quizadmin">
@@ -11,13 +11,16 @@
                     </div><% end %>
                     </h3>
                 </div>
-                <div class="small-6 large-2 columns">
-                    <%= link_to "take quiz", start_quiz_path(quiz), class: "small success button",  method: "post" %>
+                <div class="small-12 <% if current_user.admin? %>medium-3<% else %>medium-2 medium-offset-1<% end %> columns">
+                    <% if current_user.admin? %>
+                        <%= link_to "Scores", quiz_result_path(quiz), class: "small button" %>
+                    <% end %>
+                    <%= link_to "Take Quiz", start_quiz_path(quiz), class: "small success button",  method: "post" %>
                 </div>
           </div>
         <% end %>
         <% if current_user.admin? %>
-            <%= link_to 'New quiz', new_quiz_path, class: "tiny button" %>
+            <%= link_to 'New quiz', new_quiz_path, class: "small secondary button" %>
         <% end %>
     </div>
 </div>

@@ -9,7 +9,7 @@ Social::Application.routes.draw do
       post 'share'
     end
   end
-
+  resources :quiz_results
   resources :activities, only: [:index]
   resources :activities do
     member do
@@ -18,9 +18,6 @@ Social::Application.routes.draw do
     end
   end
   get "profiles/show"
-  resources :profiles do
-      post 'make_admin'
-  end
   as :user do
     get '/register', to: 'devise/registrations#new', as: :register
     get '/sign_in', to: 'devise/sessions#new', as: :sign_in
