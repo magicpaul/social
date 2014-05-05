@@ -1,7 +1,7 @@
 <div class="large-12 columns">
     <div class="card">
         <%= form_tag({:controller => "quizzes", :action => "answer"}, class: "ac-custom ac-checkbox ac-checkmark") do %>
-            <h2 id="question"><%= @question.content %></h2>
+            <h3 id="question"><%= @question.content %></h3>
             <% if @question.attachment? %>
               <%= image_tag @question.attachment.url %>
             <% end %>
