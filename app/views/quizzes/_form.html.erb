@@ -1,7 +1,11 @@
+<!-- Standard rails form setup -->
 <%= simple_form_for @quiz do |f| %>
+  <!-- displays any errors -->
   <%= f.error_notification %>
-    <%= f.input :name, required: true %>
+  <!-- Quiz name textbox -->
+  <%= f.input :name, required: true %>
   <%= f.fields_for :questions do |builder| %>
+    <!-- Renders a questions subform -->
     <%= render 'question_fields', f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Question", f, :questions %>

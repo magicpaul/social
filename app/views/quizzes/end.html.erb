@@ -2,11 +2,16 @@
     <div class="card">
         <div class="result text-center">
             <h1>Quiz Results</h1>
+            <!-- calls the get badge helper to get the right class for the trophy -->
             <span class="fi-trophy <%= get_badge(@score) %>"></span>
+            <!-- Displays the score -->
             <p id="score">Your score: <%= @score %>%</p>
+            <!-- displays the total correct -->
             <p id="question">You answered <%= @correct %> out of <%= @total %> questions correctly and got a <%= get_badge(@score) %> trophy!</p>
+            <!-- displays the number of points earned -->
             <p>You got <%= @points %> points!</p>
-          <%= link_to share_quiz_path(@quiz), :class => "success button", :method=> :post do%>
+            <!-- Posts to the share method to create a status using the above values. -->
+            <%= link_to share_quiz_path(@quiz), :class => "success button", :method=> :post do%>
             <i class='fi-share'></i>  Share result
           <% end %>
           <%= link_to "Take another quiz", quizzes_path, :class => "secondary button" %>

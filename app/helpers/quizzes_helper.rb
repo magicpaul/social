@@ -17,5 +17,4 @@ module QuizzesHelper
         end
         link_to(name, '#', class: "add_fields tiny button", data: {id: id, fields: fields.gsub("\n", "")})
     end
-
 end

@@ -1,18 +1,24 @@
 <div class="large-12 columns">
     <div class="card">
           <div class="ac-custom">
+            <!-- Get question content -->
             <h3 id="question"><%= @question.content %></h3>
             <h4>
+              <!-- If the users answer is correct display this... -->
               <% if @correct %>
                That's the right answer!
               <% else %>
-               Sorry, the's not the right answer.
+                <!-- otherwise display this... -->
+                Sorry, the's not the right answer.
               <% end %>
             </h4>
             <ul>
+            <!-- Diplay each of the answers associated with the question -->
            <% @question.answers.each do |answer| %>
+                  <!-- Highlight the right answer in green -->
                  <% if answer.correct %>
                   <li class="result success">
+                  <!-- If not already highlighed, highlight the users answer in red -->
                  <% elsif answer == @answer %>
                   <li class="result alert">
                  <% else %>
@@ -22,12 +28,11 @@
                 </li>
               <% end %>
             </ul>
-
-
+          <!-- Creates a form to send the user to the next question, quizzes controller and the question action -->
           <%= form_tag({:controller => "quizzes", :action => "question"}) do %>
             <div class="row">
               <div class="small-12 large-8 columns">
-                <div class="progress success round">
+                <div class="progress round">
                   <span class="meter" style="width: <%= @progress %>%"></span>
                 </div>
               </div>

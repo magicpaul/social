@@ -1,25 +1,55 @@
 <div class="large-12 columns">
     <div class="card"><h1>Quizzes</h1>
+        <!-- For each quiz in @quizzes -->
         <% @quizzes.each do |quiz| %>
           <div class="article quizblock row">
                 <div class="small-12 medium-9 columns">
+                    <!-- Display the name -->
                     <h3><%= quiz.name %>
+                    <!--If current user is admin... -->
                     <% if current_user.admin? %>
-                    <div class="quizadmin">
-                        <%= link_to "", edit_quiz_path(quiz), class: "admin fi-wrench so-edit", title: "Edit Quiz"%>
-                        <%= link_to '', quiz, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete",title: "Delete Quiz" %>
-                    </div><% end %>
+                    <!-- Show edit and delete controls -->
+                        <div class="quizadmin">
+                            <!-- edit quiz -->
+                            <%= link_to "", edit_quiz_path(quiz), class: "admin fi-wrench so-edit", title: "Edit Quiz"%>
+                            <!-- delete quiz -->
+                            <%= link_to '', quiz, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin fi-x so-delete",title: "Delete Quiz" %>
+                        </div>
+                    <% end %>
                     </h3>
                 </div>
+                <!-- If layout wiggles to conditionally display an extra button if admin without the whole layout blowing up -->
                 <div class="small-12 <% if current_user.admin? %>medium-3<% else %>medium-2 medium-offset-1<% end %> columns">
+                    <!-- If current_user is admin -->
                     <% if current_user.admin? %>
+                        <!-- Display a link to the quiz results -->
                         <%= link_to "Scores", quiz_result_path(quiz), class: "small button" %>
                     <% end %>
-                    <%= link_to "Take Quiz", start_quiz_path(quiz), class: "small success button",  method: "post" %>
+                    <!-- This is a bit of cheeky hackery. I couldn't get it working properly in time, so the quiz id is hardcoded in. See recommedations for details -->
+                    <!-- if the quiz id is 1 -->
+                    <% if quiz.id==1 %>
+                        <!-- display a link to the quiz. Calls the start quiz method, which doesn't have a view. Start Quiz runs helpers like setting up the questions etc, then redirects to the first question when done. -->
+                        <%= link_to "Take Quiz", start_quiz_path(quiz), class: "small success button",  method: "post" %>
+                    <% else %>
+                        <!-- for each quiz result in quiz results table -->
+                        <% @quizresult.each do |qr| %>
+                            <!-- If the current user has next quiz flag as true -->
+                            <%if qr.user_id == current_user.id && qr.next_quiz == true %>
+                                <!-- display a link to the quiz. Calls the start quiz method, which doesn't have a view. Start Quiz runs helpers like setting up the questions etc, then redirects to the first question when done. -->
+                                <%= link_to "Take Quiz", start_quiz_path(quiz), class: "small success button",  method: "post" %>
+                                <!-- Stop the loop. The user may have more than 1 attempt. We don't want to display multiple buttons -->
+                                <% break %>
+                            <% end %>
+                        <% end %>
+
+                    <%end%>
+
                 </div>
           </div>
         <% end %>
+        <!-- If the current user is admin -->
         <% if current_user.admin? %>
+            <!-- display a link to create a new quiz -->
             <%= link_to 'New quiz', new_quiz_path, class: "small secondary button" %>
         <% end %>
     </div>

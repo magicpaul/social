@@ -2,9 +2,13 @@
     <legend>Answer</legend>
   <div class="row">
     <div class="small-8 columns">
+        <!-- Answer content textbox -->
         <%= f.input_field :content, required: true  %>
     </div>
-    <div class="small-2 columns"><%= f.input :correct, as: :boolean %></div>
+    <div class="small-2 columns">
+        <!-- Checkbox to mark as correct -->
+        <%= f.input :correct, as: :boolean %>
+    </div>
     <div class="small-2 columns">
         <%= f.hidden_field :_destroy %>
         <%= link_to "remove", '#', class: "remove_fields tiny alert button" %>

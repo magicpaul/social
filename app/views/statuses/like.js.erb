@@ -1,6 +1,10 @@
+// Renders the unlike partial (pink heart).
 $("#like-button-<%= @status.id %>").html("<%= escape_javascript(render 'unlike', :status => @status) %>")
+// Removes and readds the activated class, which runs the animation.
 $("#like-button-<%= @status.id %> a").removeClass('activated').addClass('activated');
+// re-renders the likes count, updating it and adds the unlike class (pink text)
 $("#likes-count-<%= @status.id %>").html('<%= @status.likes.size %>').addClass('unlike');
+// re-renders the points partial updating it.
 $('#points').html('<%= j render partial: "points" %>');
 
 

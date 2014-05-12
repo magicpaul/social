@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140505092222) do
+ActiveRecord::Schema.define(:version => 20140506225543) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -103,12 +103,13 @@ ActiveRecord::Schema.define(:version => 20140505092222) do
     t.integer "user_id"
     t.integer "quiz_id"
     t.integer "score"
+    t.boolean "next_quiz", :default => false
   end
 
   create_table "quizzes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "read_marks", :force => true do |t|

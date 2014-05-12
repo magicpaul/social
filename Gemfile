@@ -10,6 +10,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'sqlite3'
   gem 'binding_of_caller'
+  gem 'rails-erd'
 end
 
 

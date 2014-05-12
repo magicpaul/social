@@ -1,18 +1,22 @@
 <fieldset>
-<legend>Question</legend>
+  <legend>Question</legend>
     <div class="row">
         <div class="small-10 columns">
-           <%= f.input_field :content, required: true, as: :text  %>
+          <!-- Question content text area -->
+          <%= f.input_field :content, required: true, as: :text  %>
         </div>
         <div class="small-2 columns">
           <%= f.hidden_field :_destroy %>
           <%= link_to "remove", '#', class: "remove_fields tiny alert button" %>
         </div>
         <div class="small-12 columns">
+          <!-- if there's an attachment... -->
           <% if f.object.attachment? %>
             <label>Attached file</label>
+            <!-- Display it... -->
             <%= image_tag f.object.attachment.url %>
           <% else %>
+              <!-- Otherwise display an upload field -->
               <%= f.file_field :attachment %>
           <% end %>
         </div>
@@ -20,6 +24,7 @@
 
 
   <%= f.fields_for :answers do |builder| %>
+    <!-- We need to go deeper. Render some answer fields -->
     <%= render 'answer_fields', f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Answer", f, :answers %>
